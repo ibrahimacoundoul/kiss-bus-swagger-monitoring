@@ -8,10 +8,12 @@ chmod 777 -R src/main/resources/*.json
 
 # cp /var/lib/jenkins/jobs/ico-dev-build/workspace/target/kiss-swagger-monitoring-dep.jar .
 
+git pull origin master
+
 java -cp kiss-swagger-monitoring-dep.jar fr.canalplus.cgaweb.swagger.kissSwaggerDiff.KissWSApiDocsMonitoring # regeneration des fichiers json
 
 
-git pull origin master
+#git pull origin master
 
 git add *
 
