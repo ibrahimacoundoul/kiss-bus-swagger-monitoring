@@ -2,7 +2,7 @@
 #icoundoul,10/12/2014
 
 
-cd /var/lib/jenkins/jobs/ico-dev-build/workspace
+cd /var/lib/jenkins/jobs/kiss-bus-swagger-monitoring-build/workspace
 
 chmod 777 -R src/main/resources/*.json
 
