@@ -9,12 +9,12 @@
     "operations" : [ {
       "method" : "GET",
       "summary" : "Récupère les écritures comptables à partir des informations d'un abonné",
-      "notes" : "getAccountingWriting",
+      "notes" : "getAccountppppppppingWriting",
       "type" : "ResponseWrapper«List«AccountingWriting»»",
       "nickname" : "getAccountingWriting",
       "parameters" : [ {
         "name" : "userId",
-        "description" : "Utilisateur effectuant l'opération",
+        "description" : "Utilisateudddddddddddr effectuant l'opération",
         "defaultValue" : "",
         "required" : true,
         "type" : "string",
@@ -25,7 +25,7 @@
         "description" : "Numéro d'abonne",
         "defaultValue" : "",
         "required" : true,
-        "type" : "integer",
+        "type" : "integer",hhhhhhhhhhh
         "format" : "int64",
         "paramType" : "query",
         "allowMultiple" : false
