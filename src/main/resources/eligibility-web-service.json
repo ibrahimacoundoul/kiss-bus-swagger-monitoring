@@ -1,0 +1,355 @@
+{
+  "apiVersion" : "1.0",
+  "swaggerVersion" : "1.2",
+  "basePath" : "/",
+  "resourcePath" : "fix this",
+  "produces" : [ "application/json" ],
+  "apis" : [ {
+    "path" : "/eligibility/check",
+    "description" : "checkGlobalEligibility2",
+    "operations" : [ {
+      "method" : "POST",
+      "summary" : "Webservice bouchonné temporaire pour intégration d’éligibilité commerciale globale",
+      "notes" : "checkGlobalEligibility2",
+      "type" : "ResponseWrapper«GlobalEligibilityOut2»",
+      "nickname" : "checkGlobalEligibility2",
+      "produces" : [ "application/json" ],
+      "parameters" : [ {
+        "name" : "userId",
+        "description" : "userId",
+        "defaultValue" : "",
+        "required" : true,
+        "type" : "string",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "distributorId",
+        "description" : "distributorId",
+        "defaultValue" : "",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "contactId",
+        "description" : "contactId",
+        "defaultValue" : "",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "saleDevice",
+        "description" : "saleDevice",
+        "defaultValue" : "",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "salesman",
+        "description" : "salesman",
+        "defaultValue" : "",
+        "required" : false,
+        "type" : "string",
+        "paramType" : "query",
+        "allowMultiple" : false
+      }, {
+        "name" : "eligibilityIn",
+        "description" : "eligibilityIn",
+        "defaultValue" : "",
+        "required" : false,
+        "type" : "EligibilityIn2",
+        "paramType" : "body",
+        "allowMultiple" : false
+      } ],
+      "responseMessages" : [ {
+        "code" : 510,
+        "message" : " "
+      } ],
+      "deprecated" : "false"
+    } ]
+  } ],
+  "models" : {
+    "PhoneCommon" : {
+      "id" : "PhoneCommon",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "phoneNumber" : {
+          "type" : "string"
+        },
+        "phoneType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PaymentMeans" : {
+      "id" : "PaymentMeans",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "directDebitDate" : {
+          "type" : "string"
+        },
+        "creditCard" : {
+          "$ref" : "CreditCard"
+        },
+        "thirdPayorId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "directDebit" : {
+          "$ref" : "DirectDebit"
+        }
+      }
+    },
+    "CreditCard" : {
+      "id" : "CreditCard",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "creditCardType" : {
+          "type" : "string"
+        },
+        "creditCardNumber" : {
+          "type" : "string"
+        },
+        "cryptogram" : {
+          "type" : "string"
+        },
+        "expirationDate" : {
+          "type" : "string",
+          "description" : "Format date attendu yyyymm"
+        },
+        "authorizationNumber" : {
+          "type" : "string"
+        },
+        "owner" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Equipment" : {
+      "id" : "Equipment",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "equipmentId" : {
+          "type" : "string"
+        },
+        "equipmentType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GlobalEligibilityOut2" : {
+      "id" : "GlobalEligibilityOut2",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "personErrorMessage" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ErrorMessage"
+          }
+        },
+        "ibanErrorMessage" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ErrorMessage"
+          }
+        },
+        "sponsorErrorMessage" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ErrorMessage"
+          }
+        },
+        "cbErrorMessage" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ErrorMessage"
+          }
+        },
+        "duplicatedPerson" : {
+          "$ref" : "EligibilityPersonOut"
+        },
+        "status" : {
+          "type" : "string",
+          "enum" : [ "OK", "WARNING", "KO" ]
+        }
+      }
+    },
+    "PersonCommon" : {
+      "id" : "PersonCommon",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "numIdent" : {
+          "type" : "string"
+        },
+        "subscriberCategory" : {
+          "type" : "string"
+        },
+        "subscriberSubCategory" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "civility" : {
+          "type" : "string"
+        },
+        "companyName" : {
+          "type" : "string"
+        },
+        "companyId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ResponseWrapper«GlobalEligibilityOut2»" : {
+      "id" : "ResponseWrapper«GlobalEligibilityOut2»",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "severity" : {
+          "type" : "string",
+          "enum" : [ "WARN", "ERROR", "FATAL", "SUCCESS" ]
+        },
+        "returnCode" : {
+          "type" : "string"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "data" : {
+          "$ref" : "GlobalEligibilityOut2"
+        }
+      }
+    },
+    "DirectDebit" : {
+      "id" : "DirectDebit",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "iban" : {
+          "type" : "string"
+        },
+        "bic" : {
+          "type" : "string"
+        }
+      }
+    },
+    "EligibilityIn2" : {
+      "id" : "EligibilityIn2",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "commercialOperators" : {
+          "type" : "array",
+          "uniqueItems" : true,
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "person" : {
+          "$ref" : "PersonCommon"
+        },
+        "equipments" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Equipment"
+          }
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "payment" : {
+          "$ref" : "PaymentMeans"
+        },
+        "sponsorId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "phones" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "PhoneCommon"
+          }
+        },
+        "address" : {
+          "$ref" : "AddressCommon"
+        }
+      }
+    },
+    "AddressCommon" : {
+      "id" : "AddressCommon",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "postalCode" : {
+          "type" : "string"
+        },
+        "street1" : {
+          "type" : "string"
+        },
+        "street2" : {
+          "type" : "string"
+        },
+        "street3" : {
+          "type" : "string"
+        },
+        "street4" : {
+          "type" : "string"
+        },
+        "countryId" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "forcingIndicator" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "EligibilityPersonOut" : {
+      "id" : "EligibilityPersonOut",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "civility" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ErrorMessage" : {
+      "id" : "ErrorMessage",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "label" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
