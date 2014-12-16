@@ -2,7 +2,9 @@
 #icoundoul,10/12/2014
 
 
-cd /var/lib/jenkins/jobs/kiss-bus-swagger-monitoring
+#cd /var/lib/jenkins/jobs/kiss-bus-swagger-monitoring
+
+cd /soft/kiss-bus-swagger-monitoring 
 
 chmod 777 -R src/main/resources/*.json
 
