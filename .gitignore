@@ -2,7 +2,7 @@
 /.project
 /.classpath
 /target
-/kiss-swagger-monitoring.bat
-/kiss-swagger-monitoring.sh
+kiss-swagger-monitoring.bat
+kiss-swagger-monitoring.sh
 
 

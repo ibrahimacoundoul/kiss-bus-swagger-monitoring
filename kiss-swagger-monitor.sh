@@ -2,15 +2,15 @@
 #icoundoul,10/12/2014
 
 
-cd /var/lib/jenkins/jobs/kiss-bus-swagger-monitoring-build/workspace
+cd /var/lib/jenkins/jobs/kiss-bus-swagger-monitoring
 
 chmod 777 -R src/main/resources/*.json
 
-# cp /var/lib/jenkins/jobs/ico-dev-build/workspace/target/kiss-swagger-monitoring-dep.jar .
+cp /var/lib/jenkins/jobs/kiss-bus-swagger-monitoring-build/workspace/target/kiss-swagger-monitoring-dep.jar .
 
 git pull origin master
 
-java -cp target/kiss-swagger-monitoring-dep.jar fr.canalplus.cgaweb.swagger.kissSwaggerDiff.KissWSApiDocsMonitoring # regeneration des fichiers json
+java -cp kiss-swagger-monitoring-dep.jar fr.canalplus.cgaweb.swagger.kissSwaggerDiff.KissWSApiDocsMonitoring # regeneration des fichiers json
 
 
 #git pull origin master
