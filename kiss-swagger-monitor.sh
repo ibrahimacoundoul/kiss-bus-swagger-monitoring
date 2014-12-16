@@ -19,5 +19,5 @@ git add *
 
 git commit -am "commit auto des modifications des webservices KISS avec Swagger (shell)"
 
-git push --repo https://ibrahimacoundoul:testtest1@github.com/ibrahimacoundoul/cgaweb-ico-dev.git
+git push --repo https://ibrahimacoundoul:testtest1@github.com/ibrahimacoundoul/kiss-bus-swagger-monitoring.git
 # git push --repo https://git@github.com/ibrahimacoundoul/cgaweb-ico-dev.git
