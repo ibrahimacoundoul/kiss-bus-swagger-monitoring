@@ -21,8 +21,10 @@ java -cp kiss-swagger-monitoring-dep.jar fr.canalplus.cgaweb.swagger.kissSwagger
 
 #git pull origin master
 
+#Update and index news files
 git add *
 
+#Commit and send to the central repository
 git commit -am "commit auto des modifications des webservices KISS avec Swagger (shell)"
 
 git push --repo https://ibrahimacoundoul:testtest1@github.com/ibrahimacoundoul/kiss-bus-swagger-monitoring.git
