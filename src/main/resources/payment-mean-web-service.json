@@ -1293,11 +1293,11 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "numabo" : {
+        "personId" : {
           "type" : "integer",
           "format" : "int64"
         },
-        "initCreditCardPaymentAuthorizationOuts" : {
+        "authorizations" : {
           "type" : "array",
           "items" : {
             "$ref" : "InitCreditCardPaymentAuthorizationOut"
