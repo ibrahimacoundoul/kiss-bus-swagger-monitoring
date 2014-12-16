@@ -2,6 +2,7 @@
 /.project
 /.classpath
 /target
+/kiss-swagger-monitoring-dep.jar
 kiss-swagger-monitoring.bat
 kiss-swagger-monitoring.sh
 

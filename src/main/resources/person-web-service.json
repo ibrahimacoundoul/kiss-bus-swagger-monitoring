@@ -9,7 +9,7 @@
     "description" : "createEmail",
     "operations" : [ {
       "method" : "POST",
-      "summary" : "Création d'une adresse électronique d'un abonné",
+      "summary" : "Create d'une adresse électronique d'un abonné",
       "notes" : "createEmail",
       "type" : "ResponseWrapper«object»",
       "nickname" : "createEmail",
@@ -39,7 +39,7 @@
         "allowMultiple" : false
       }, {
         "name" : "saleDevice",
-        "description" : "Canal via lequel l'opération est effectuée ",
+        "description" : "Canal par le lequel l'opération est effectuée ",
         "defaultValue" : "",
         "required" : false,
         "type" : "string",
@@ -55,7 +55,7 @@
         "allowMultiple" : false
       }, {
         "name" : "personId",
-        "description" : "Numéro d'abonne",
+        "description" : "Numéro abonnerrrrrr",
         "defaultValue" : "",
         "required" : true,
         "type" : "integer",
