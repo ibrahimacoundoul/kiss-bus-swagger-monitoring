@@ -286,12 +286,12 @@
           "type" : "string",
           "description" : "Indicateur d'éligibilité auprès d'un FAI"
         },
-        "equipmentConfig" : {
-          "type" : "string"
-        },
         "firstAmount" : {
           "type" : "number",
           "format" : "double"
+        },
+        "equipmentConfig" : {
+          "type" : "string"
         },
         "equipmentConfigLabel" : {
           "type" : "string"
@@ -309,12 +309,12 @@
             "$ref" : "EquipmentTypeResponse"
           }
         },
-        "equipmentConfig" : {
-          "type" : "string"
-        },
         "firstAmount" : {
           "type" : "number",
           "format" : "double"
+        },
+        "equipmentConfig" : {
+          "type" : "string"
         },
         "equipmentConfigLabel" : {
           "type" : "string"
@@ -395,13 +395,9 @@
     "ConfigurationParameters" : {
       "id" : "ConfigurationParameters",
       "description" : "",
-      "required" : [ "action", "broadcastVectorId", "ispId", "commercialOperator", "postalCode", "origin", "duration", "methodOfPayment", "startDate", "countryId" ],
+      "required" : [ "broadcastVectorId", "ispId", "commercialOperator", "postalCode", "origin", "duration", "methodOfPayment", "startDate", "countryId", "action" ],
       "extends" : "",
       "properties" : {
-        "action" : {
-          "type" : "string",
-          "description" : "Type d'action en cours"
-        },
         "broadcastVectorId" : {
           "type" : "string",
           "description" : "Identifiant du vecteur de diffusion"
@@ -413,6 +409,11 @@
         "commercialOperator" : {
           "type" : "string",
           "description" : "Identifiant de l'opérateur "
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Identifiant de l'abonné"
         },
         "postalCode" : {
           "type" : "string",
@@ -439,11 +440,6 @@
           "format" : "int32",
           "description" : "Numéro de contrat"
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "Identifiant de l'abonné"
-        },
         "reasonId" : {
           "type" : "string",
           "description" : "Motif logisitique"
@@ -458,6 +454,10 @@
         "countryId" : {
           "type" : "string",
           "description" : "Le pays de l'abonné"
+        },
+        "action" : {
+          "type" : "string",
+          "description" : "Type d'action en cours"
         }
       }
     },
@@ -535,9 +535,6 @@
         "ispId" : {
           "type" : "string"
         },
-        "equipmentConfig" : {
-          "type" : "string"
-        },
         "equipmentTypes" : {
           "type" : "array",
           "items" : {
@@ -547,6 +544,9 @@
         "firstAmount" : {
           "type" : "number",
           "format" : "double"
+        },
+        "equipmentConfig" : {
+          "type" : "string"
         },
         "sortOrder" : {
           "type" : "integer",
@@ -558,10 +558,10 @@
         "configCategoryLabel" : {
           "type" : "string"
         },
-        "equipmentConfigLabel" : {
+        "isIspId" : {
           "type" : "string"
         },
-        "isIspId" : {
+        "equipmentConfigLabel" : {
           "type" : "string"
         }
       }
@@ -611,9 +611,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "action" : {
-          "type" : "string"
-        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -647,6 +644,9 @@
           "items" : {
             "$ref" : "EquipmentTypeInput"
           }
+        },
+        "action" : {
+          "type" : "string"
         }
       }
     },

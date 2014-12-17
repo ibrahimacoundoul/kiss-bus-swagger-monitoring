@@ -407,10 +407,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "amount" : {
           "type" : "number",
           "format" : "double"
@@ -433,9 +429,6 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "needChequeId" : {
-          "type" : "boolean"
-        },
         "statusId" : {
           "type" : "string"
         },
@@ -444,6 +437,13 @@
         },
         "creationUserId" : {
           "type" : "string"
+        },
+        "needChequeId" : {
+          "type" : "boolean"
+        },
+        "creationDate" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     },
@@ -525,24 +525,20 @@
           "type" : "integer",
           "format" : "int64"
         },
-        "validationuserId" : {
-          "type" : "string"
-        },
-        "modeId" : {
-          "type" : "string"
-        },
         "statusId" : {
           "type" : "string"
         },
         "categoryId" : {
           "type" : "string"
         },
-        "comment" : {
+        "modeId" : {
           "type" : "string"
         },
-        "creationDate" : {
-          "type" : "integer",
-          "format" : "int64"
+        "validationuserId" : {
+          "type" : "string"
+        },
+        "comment" : {
+          "type" : "string"
         },
         "amount" : {
           "type" : "number",
@@ -566,11 +562,15 @@
           "type" : "integer",
           "format" : "int32"
         },
+        "creationUserId" : {
+          "type" : "string"
+        },
         "needChequeId" : {
           "type" : "boolean"
         },
-        "creationUserId" : {
-          "type" : "string"
+        "creationDate" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     },
@@ -579,6 +579,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "startDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
@@ -591,17 +595,13 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "categories" : {
+        "motives" : {
           "type" : "array",
           "items" : {
             "type" : "string"
           }
         },
-        "motives" : {
+        "categories" : {
           "type" : "array",
           "items" : {
             "type" : "string"

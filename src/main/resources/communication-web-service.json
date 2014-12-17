@@ -74,7 +74,7 @@
     "CommunicationRequest" : {
       "id" : "CommunicationRequest",
       "description" : "",
-      "required" : [ "personId", "retrievePhone", "retrievePerson", "retrieveContracts", "retrieveContractEquipments", "retrieveEmail", "retrieveAddress" ],
+      "required" : [ "personId", "retrievePerson", "retrievePhone", "retrieveEmail", "retrieveAddress", "retrieveContracts", "retrieveContractEquipments" ],
       "extends" : "",
       "properties" : {
         "personId" : {
@@ -82,21 +82,13 @@
           "format" : "int64",
           "description" : "Id de l'abonné"
         },
-        "retrievePhone" : {
-          "type" : "boolean",
-          "description" : "Indique si l'élément \"phoneNumbers\" doit être ajouté ou pas dans la réponse"
-        },
         "retrievePerson" : {
           "type" : "boolean",
           "description" : "Indique si l'élément \"person\" doit être ajouté ou pas dans la réponse"
         },
-        "retrieveContracts" : {
+        "retrievePhone" : {
           "type" : "boolean",
-          "description" : "Indique si l'élément \"contracts\" doit être ajouté ou pas dans la réponse"
-        },
-        "retrieveContractEquipments" : {
-          "type" : "boolean",
-          "description" : "Indique si l'élément \"contractEquipments\" doit être ajouté ou pas dans la réponse"
+          "description" : "Indique si l'élément \"phoneNumbers\" doit être ajouté ou pas dans la réponse"
         },
         "retrieveEmail" : {
           "type" : "boolean",
@@ -105,6 +97,14 @@
         "retrieveAddress" : {
           "type" : "boolean",
           "description" : "Indique si l'élément \"adresses\" doit être ajouté ou pas dans la réponse"
+        },
+        "retrieveContracts" : {
+          "type" : "boolean",
+          "description" : "Indique si l'élément \"contracts\" doit être ajouté ou pas dans la réponse"
+        },
+        "retrieveContractEquipments" : {
+          "type" : "boolean",
+          "description" : "Indique si l'élément \"contractEquipments\" doit être ajouté ou pas dans la réponse"
         }
       }
     },
@@ -113,9 +113,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
-          "type" : "string"
-        },
         "active" : {
           "type" : "boolean"
         },
@@ -126,6 +123,9 @@
           "type" : "string"
         },
         "bic" : {
+          "type" : "string"
+        },
+        "distributorId" : {
           "type" : "string"
         },
         "amount" : {
@@ -142,6 +142,18 @@
           "type" : "string"
         },
         "endDate" : {
+          "type" : "string"
+        },
+        "cancellationReason" : {
+          "type" : "string"
+        },
+        "nextSuspensionDate" : {
+          "type" : "string"
+        },
+        "suspensionDuration" : {
+          "type" : "string"
+        },
+        "broadcastMediaType" : {
           "type" : "string"
         },
         "promotions" : {
@@ -182,18 +194,6 @@
         "commercialOperator" : {
           "type" : "string"
         },
-        "cancellationReason" : {
-          "type" : "string"
-        },
-        "nextSuspensionDate" : {
-          "type" : "string"
-        },
-        "suspensionDuration" : {
-          "type" : "string"
-        },
-        "broadcastMediaType" : {
-          "type" : "string"
-        },
         "directDebitDate" : {
           "type" : "string"
         },
@@ -226,26 +226,10 @@
         "ongoingCancellation" : {
           "type" : "boolean"
         },
-        "nonRenewalReason" : {
+        "updateUser" : {
           "type" : "string"
-        },
-        "cancellationUser" : {
-          "type" : "string"
-        },
-        "suspensionDate" : {
-          "type" : "string"
-        },
-        "thirdPartyPayerId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "reactivableAfterRegul" : {
-          "type" : "boolean"
         },
         "majorProductId" : {
-          "type" : "string"
-        },
-        "distributorId" : {
           "type" : "string"
         },
         "mainCommentText" : {
@@ -284,7 +268,23 @@
         "fullValidationStatus" : {
           "type" : "string"
         },
-        "updateUser" : {
+        "nonRenewalReason" : {
+          "type" : "string"
+        },
+        "cancellationUser" : {
+          "type" : "string"
+        },
+        "suspensionDate" : {
+          "type" : "string"
+        },
+        "thirdPartyPayerId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "reactivableAfterRegul" : {
+          "type" : "boolean"
+        },
+        "ldrDate" : {
           "type" : "string"
         },
         "indldr" : {
@@ -293,11 +293,11 @@
         "renewalDate" : {
           "type" : "string"
         },
-        "ldrDate" : {
-          "type" : "string"
-        },
         "linked" : {
           "type" : "boolean"
+        },
+        "creationDate" : {
+          "type" : "string"
         },
         "duration" : {
           "type" : "integer",
@@ -406,12 +406,12 @@
         "street4" : {
           "type" : "string"
         },
-        "undeliverabilityReason" : {
-          "type" : "string"
-        },
         "addressId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "undeliverabilityReason" : {
+          "type" : "string"
         },
         "valid" : {
           "type" : "boolean"
@@ -423,10 +423,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "identityType" : {
+        "identityNumber" : {
           "type" : "string"
         },
-        "identityNumber" : {
+        "identityType" : {
           "type" : "string"
         },
         "validityDate" : {
@@ -439,10 +439,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
+        "mediaType" : {
           "type" : "string"
         },
-        "mediaType" : {
+        "distributorId" : {
           "type" : "string"
         },
         "actOfManagementId" : {
@@ -476,10 +476,10 @@
         "cancellationUser" : {
           "type" : "string"
         },
-        "distributorId" : {
+        "salesman" : {
           "type" : "string"
         },
-        "salesman" : {
+        "actOfManagementType" : {
           "type" : "string"
         },
         "actOfManagementFamilyType" : {
@@ -488,7 +488,7 @@
         "changes" : {
           "$ref" : "ActOfManagementDetail"
         },
-        "actOfManagementType" : {
+        "creationDate" : {
           "type" : "string"
         }
       }
@@ -544,10 +544,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "startDate" : {
+        "email" : {
           "type" : "string"
         },
-        "email" : {
+        "startDate" : {
           "type" : "string"
         },
         "endDate" : {
@@ -604,9 +604,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
-          "type" : "string"
-        },
         "userId" : {
           "type" : "string"
         },
@@ -615,6 +612,12 @@
         },
         "lastName" : {
           "type" : "string"
+        },
+        "emails" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "EmailOut"
+          }
         },
         "subscriberCategory" : {
           "type" : "string"
@@ -625,12 +628,6 @@
         "personId" : {
           "type" : "integer",
           "format" : "int64"
-        },
-        "emails" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "EmailOut"
-          }
         },
         "civility" : {
           "type" : "string"
@@ -650,6 +647,15 @@
             "$ref" : "Address"
           }
         },
+        "birthDate" : {
+          "type" : "string"
+        },
+        "updateUser" : {
+          "type" : "string"
+        },
+        "homeId" : {
+          "type" : "string"
+        },
         "identityDocuments" : {
           "$ref" : "IdentityDocument"
         },
@@ -665,22 +671,10 @@
             "$ref" : "Address"
           }
         },
-        "birthDate" : {
-          "type" : "string"
-        },
-        "updateUser" : {
-          "type" : "string"
-        },
-        "homeId" : {
-          "type" : "string"
-        },
-        "personalInformationFlag" : {
-          "type" : "boolean"
-        },
         "acceptSMS" : {
           "type" : "boolean"
         },
-        "vip" : {
+        "personalInformationFlag" : {
           "type" : "boolean"
         },
         "acceptEmailFromCanalPlus" : {
@@ -689,10 +683,16 @@
         "acceptEmailFromPartners" : {
           "type" : "boolean"
         },
+        "vip" : {
+          "type" : "boolean"
+        },
         "civilityLabel" : {
           "type" : "string"
         },
         "registrationURL" : {
+          "type" : "string"
+        },
+        "creationDate" : {
           "type" : "string"
         }
       }
@@ -712,11 +712,17 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
-          "type" : "string"
-        },
         "userId" : {
           "type" : "string"
+        },
+        "broadcastMediaType" : {
+          "type" : "string"
+        },
+        "accessories" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "AccessoryOut"
+          }
         },
         "personId" : {
           "type" : "integer",
@@ -732,15 +738,6 @@
         "ispId" : {
           "type" : "string"
         },
-        "broadcastMediaType" : {
-          "type" : "string"
-        },
-        "accessories" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "AccessoryOut"
-          }
-        },
         "equipmentType" : {
           "type" : "string"
         },
@@ -754,6 +751,9 @@
           "type" : "string"
         },
         "equipmentTypeLabel" : {
+          "type" : "string"
+        },
+        "creationDate" : {
           "type" : "string"
         }
       }
@@ -779,13 +779,13 @@
         "commercialLabel" : {
           "type" : "string"
         },
+        "productType" : {
+          "type" : "string"
+        },
         "productCategory" : {
           "type" : "string"
         },
         "themeId" : {
-          "type" : "string"
-        },
-        "productType" : {
           "type" : "string"
         }
       }

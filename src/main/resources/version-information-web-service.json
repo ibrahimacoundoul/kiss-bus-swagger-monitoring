@@ -62,11 +62,11 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "applicationInformation" : {
-          "$ref" : "ApplicationInformation"
-        },
         "databaseInformation" : {
           "$ref" : "DatabaseInformation"
+        },
+        "applicationInformation" : {
+          "$ref" : "ApplicationInformation"
         }
       }
     },
@@ -75,10 +75,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "sid" : {
+        "updatedDate" : {
           "type" : "string"
         },
-        "updatedDate" : {
+        "sid" : {
           "type" : "string"
         },
         "version" : {

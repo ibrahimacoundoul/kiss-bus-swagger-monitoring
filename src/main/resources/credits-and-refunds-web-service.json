@@ -804,9 +804,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
-          "type" : "string"
-        },
         "motiveId" : {
           "type" : "string"
         },
@@ -819,6 +816,9 @@
         "actOfManagmentId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "creationDate" : {
+          "type" : "string"
         }
       }
     },
@@ -882,13 +882,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "motiveId" : {
           "type" : "string"
@@ -1043,10 +1043,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "amount" : {
           "type" : "number",
           "format" : "double"
@@ -1077,6 +1073,10 @@
         },
         "initMotiveId" : {
           "type" : "string"
+        },
+        "creationDate" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     },
@@ -1183,6 +1183,15 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "accountingOperatorId" : {
+          "type" : "string"
+        },
+        "actOfManagmentHistory" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ActOfManagmentHistory"
+          }
+        },
         "lettercheckid" : {
           "type" : "integer",
           "format" : "int64"
@@ -1192,15 +1201,6 @@
           "format" : "int64"
         },
         "checkid" : {
-          "type" : "string"
-        },
-        "actOfManagmentHistory" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "ActOfManagmentHistory"
-          }
-        },
-        "accountingOperatorId" : {
           "type" : "string"
         },
         "firstName" : {
@@ -1290,13 +1290,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "motiveId" : {
           "type" : "string"

@@ -149,10 +149,10 @@
         "commercialOperator" : {
           "type" : "string"
         },
-        "contractStatus" : {
+        "transactionId" : {
           "type" : "string"
         },
-        "transactionId" : {
+        "contractStatus" : {
           "type" : "string"
         }
       }
@@ -186,11 +186,11 @@
             "$ref" : "Equipment"
           }
         },
-        "orderId" : {
-          "type" : "string"
-        },
         "person" : {
           "$ref" : "PersonToSubscribe"
+        },
+        "orderId" : {
+          "type" : "string"
         },
         "email" : {
           "type" : "string"
@@ -198,12 +198,12 @@
         "payment" : {
           "$ref" : "PaymentToSubscribe"
         },
+        "equipmentConfig" : {
+          "type" : "string"
+        },
         "shipmentFees" : {
           "type" : "number",
           "format" : "double"
-        },
-        "equipmentConfig" : {
-          "type" : "string"
         },
         "affectationType" : {
           "type" : "string"
@@ -306,13 +306,13 @@
         "lastName" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         },
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         }
       }
@@ -434,9 +434,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "action" : {
-          "type" : "string"
-        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -484,6 +481,9 @@
         },
         "freeMethodOfPaymentReason" : {
           "type" : "string"
+        },
+        "action" : {
+          "type" : "string"
         }
       }
     },
@@ -505,15 +505,15 @@
           "type" : "integer",
           "format" : "int64"
         },
-        "shipmentFees" : {
-          "type" : "number",
-          "format" : "double"
-        },
         "availabilityFees" : {
           "type" : "number",
           "format" : "double"
         },
         "firstAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "shipmentFees" : {
           "type" : "number",
           "format" : "double"
         }

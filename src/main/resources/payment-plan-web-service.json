@@ -76,6 +76,16 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "promotions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "PromotionPayment"
+          }
+        },
         "postalCode" : {
           "type" : "string"
         },
@@ -86,16 +96,6 @@
         "endDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "promotions" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "PromotionPayment"
-          }
         },
         "products" : {
           "type" : "array",

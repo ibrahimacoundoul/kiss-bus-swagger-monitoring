@@ -354,10 +354,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
@@ -367,6 +363,10 @@
           "items" : {
             "$ref" : "InternalPromotion"
           }
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         }
       }
     },
@@ -410,9 +410,13 @@
     "InfosSubscriptionContextAndArticles" : {
       "id" : "InfosSubscriptionContextAndArticles",
       "description" : "",
-      "required" : [ "contextsousc", "postalCode", "methodOfPayment", "broadcastVectorId", "ispId", "commercialOperator", "countryId", "dateToDate", "broadcastMediaType", "productsId", "duration", "origin" ],
+      "required" : [ "broadcastMediaType", "contextsousc", "postalCode", "methodOfPayment", "broadcastVectorId", "ispId", "commercialOperator", "countryId", "dateToDate", "productsId", "duration", "origin" ],
       "extends" : "",
       "properties" : {
+        "broadcastMediaType" : {
+          "type" : "string",
+          "description" : "broadcast media type du contrat à souscrire"
+        },
         "contextsousc" : {
           "type" : "string",
           "description" : "code du contexte de souscription"
@@ -445,10 +449,6 @@
           "type" : "string",
           "description" : "indicateur de contrat date à date"
         },
-        "broadcastMediaType" : {
-          "type" : "string",
-          "description" : "broadcast media type du contrat à souscrire"
-        },
         "productsId" : {
           "type" : "array",
           "description" : "codes des produits du contrat à souscrire",
@@ -477,10 +477,10 @@
         "promotionId" : {
           "type" : "string"
         },
-        "enddate" : {
+        "shortLabel" : {
           "type" : "string"
         },
-        "shortLabel" : {
+        "enddate" : {
           "type" : "string"
         },
         "description" : {
@@ -561,10 +561,10 @@
         "promotionId" : {
           "type" : "string"
         },
-        "enddate" : {
+        "shortLabel" : {
           "type" : "string"
         },
-        "shortLabel" : {
+        "enddate" : {
           "type" : "string"
         },
         "description" : {

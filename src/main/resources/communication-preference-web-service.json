@@ -215,15 +215,15 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "solicitations" : {
           "type" : "array",
           "items" : {
             "$ref" : "SolicitationByOperatorRequest"
           }
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     },

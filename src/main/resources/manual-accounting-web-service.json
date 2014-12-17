@@ -251,13 +251,13 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "vatId" : {
-          "type" : "string"
-        },
         "accountingPostId" : {
           "type" : "string"
         },
         "accountingProductId" : {
+          "type" : "string"
+        },
+        "vatId" : {
           "type" : "string"
         },
         "month" : {
@@ -297,12 +297,12 @@
           "type" : "integer",
           "format" : "int64"
         },
-        "accountingReadjustedDate" : {
-          "$ref" : "date-time"
-        },
         "accountingPieceId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "accountingReadjustedDate" : {
+          "$ref" : "date-time"
         }
       }
     },
@@ -326,13 +326,13 @@
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "operatorId" : {
           "type" : "string"
@@ -341,17 +341,17 @@
           "type" : "integer",
           "format" : "int64"
         },
-        "accountingPieceLabel" : {
-          "type" : "string"
-        },
-        "crmLedgerId" : {
-          "type" : "string"
-        },
         "entries" : {
           "type" : "array",
           "items" : {
             "$ref" : "ManualAccountingEntry"
           }
+        },
+        "accountingPieceLabel" : {
+          "type" : "string"
+        },
+        "crmLedgerId" : {
+          "type" : "string"
         },
         "comment" : {
           "type" : "string"
@@ -363,9 +363,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
-          "type" : "string"
-        },
         "accountingDate" : {
           "type" : "string"
         },
@@ -410,6 +407,9 @@
           "items" : {
             "$ref" : "ManualAccountingEntry"
           }
+        },
+        "creationDate" : {
+          "type" : "string"
         },
         "comment" : {
           "type" : "string"

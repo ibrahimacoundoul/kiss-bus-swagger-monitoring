@@ -849,18 +849,19 @@
     "PaymentMeans" : {
       "id" : "PaymentMeans",
       "description" : "",
-      "required" : [ "iban", "contractId", "createdDate" ],
+      "required" : [ "createdDate", "iban", "contractId" ],
       "extends" : "",
       "properties" : {
+        "createdDate" : {
+          "type" : "string",
+          "description" : "Date de création du moyen de paiment, format mm/aa"
+        },
         "iban" : {
           "type" : "string",
           "description" : "L'iban"
         },
         "bic" : {
           "type" : "string"
-        },
-        "creditCard" : {
-          "$ref" : "CreditCardLight"
         },
         "methodOfPayment" : {
           "type" : "string"
@@ -870,14 +871,13 @@
           "format" : "int32",
           "description" : "Le contrat associé au moyen de paiement"
         },
+        "creditCard" : {
+          "$ref" : "CreditCardLight"
+        },
         "directDebitDate" : {
           "type" : "integer",
           "format" : "int32",
           "description" : "Jour de prélèvement"
-        },
-        "createdDate" : {
-          "type" : "string",
-          "description" : "Date de création du moyen de paiment, format mm/aa"
         }
       }
     },
@@ -1210,13 +1210,13 @@
         "lastName" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         },
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         }
       }
@@ -1316,11 +1316,11 @@
             "$ref" : "PhoneCommon"
           }
         },
-        "orderId" : {
-          "type" : "string"
-        },
         "person" : {
           "$ref" : "PersonProspect"
+        },
+        "orderId" : {
+          "type" : "string"
         },
         "email" : {
           "type" : "string"
@@ -1347,12 +1347,12 @@
             "$ref" : "InitCreditCardPaymentAuthorizationIn"
           }
         },
-        "postalCode" : {
-          "type" : "string"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "postalCode" : {
+          "type" : "string"
         },
         "countryId" : {
           "type" : "string"
@@ -1442,10 +1442,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "code" : {
+        "label" : {
           "type" : "string"
         },
-        "label" : {
+        "code" : {
           "type" : "string"
         }
       }

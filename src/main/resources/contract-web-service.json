@@ -1926,13 +1926,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         }
       }
     },
@@ -2073,16 +2073,6 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "rejectCode" : {
-          "type" : "string"
-        },
-        "isIntentional" : {
-          "type" : "boolean"
-        },
-        "directDebitId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "directDebitTypeLabel" : {
           "type" : "string"
         },
@@ -2094,6 +2084,16 @@
         },
         "isRepresentable" : {
           "type" : "boolean"
+        },
+        "rejectCode" : {
+          "type" : "string"
+        },
+        "isIntentional" : {
+          "type" : "boolean"
+        },
+        "directDebitId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "month" : {
           "type" : "string"
@@ -2144,13 +2144,13 @@
         "commercialLabel" : {
           "type" : "string"
         },
+        "productType" : {
+          "type" : "string"
+        },
         "productCategory" : {
           "type" : "string"
         },
         "themeId" : {
-          "type" : "string"
-        },
-        "productType" : {
           "type" : "string"
         }
       }
@@ -2166,6 +2166,10 @@
         "commercialOperator" : {
           "type" : "string"
         },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "cancellationDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
@@ -2173,10 +2177,6 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
         },
         "cancellationReason" : {
           "type" : "string"
@@ -2307,15 +2307,15 @@
             "$ref" : "Equipment"
           }
         },
+        "equipmentConfig" : {
+          "type" : "string"
+        },
         "transactionId" : {
           "type" : "string"
         },
         "shipmentFees" : {
           "type" : "number",
           "format" : "double"
-        },
-        "equipmentConfig" : {
-          "type" : "string"
         },
         "reasonId" : {
           "type" : "string"
@@ -2362,6 +2362,12 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "contracts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ContractModification"
+          }
+        },
         "workingDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
@@ -2369,12 +2375,6 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "contracts" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "ContractModification"
-          }
         },
         "vouchers" : {
           "type" : "array",
@@ -2401,10 +2401,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
+        "startDate" : {
           "type" : "string"
         },
-        "startDate" : {
+        "distributorId" : {
           "type" : "string"
         },
         "products" : {
@@ -2417,6 +2417,12 @@
           "type" : "string"
         },
         "endDate" : {
+          "type" : "string"
+        },
+        "cancellationReason" : {
+          "type" : "string"
+        },
+        "broadcastMediaType" : {
           "type" : "string"
         },
         "cancellationDate" : {
@@ -2448,12 +2454,6 @@
         "commercialOperator" : {
           "type" : "string"
         },
-        "cancellationReason" : {
-          "type" : "string"
-        },
-        "broadcastMediaType" : {
-          "type" : "string"
-        },
         "contractStatus" : {
           "type" : "string"
         },
@@ -2473,20 +2473,7 @@
         "freeMethodOfPaymentReason" : {
           "type" : "string"
         },
-        "nonRenewalReason" : {
-          "type" : "string"
-        },
-        "cancellationUser" : {
-          "type" : "string"
-        },
-        "suspensionDate" : {
-          "type" : "string"
-        },
-        "thirdPartyPayerId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "distributorId" : {
+        "updateUser" : {
           "type" : "string"
         },
         "freeCancellationDate" : {
@@ -2501,7 +2488,20 @@
         "fullValidationStatus" : {
           "type" : "string"
         },
-        "updateUser" : {
+        "nonRenewalReason" : {
+          "type" : "string"
+        },
+        "cancellationUser" : {
+          "type" : "string"
+        },
+        "suspensionDate" : {
+          "type" : "string"
+        },
+        "thirdPartyPayerId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "creationDate" : {
           "type" : "string"
         },
         "duration" : {
@@ -2526,12 +2526,6 @@
           "format" : "float"
         },
         "ongoingCancellation" : {
-          "type" : "boolean"
-        },
-        "reactivableAfterRegul" : {
-          "type" : "boolean"
-        },
-        "digitalSignature" : {
           "type" : "boolean"
         },
         "majorProductId" : {
@@ -2563,6 +2557,12 @@
         },
         "commercialOperatorLabel" : {
           "type" : "string"
+        },
+        "reactivableAfterRegul" : {
+          "type" : "boolean"
+        },
+        "digitalSignature" : {
+          "type" : "boolean"
         }
       }
     },
@@ -2582,13 +2582,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
-          "type" : "string"
-        },
         "active" : {
           "type" : "boolean"
         },
         "startDate" : {
+          "type" : "string"
+        },
+        "distributorId" : {
           "type" : "string"
         },
         "products" : {
@@ -2601,6 +2601,12 @@
           "type" : "string"
         },
         "endDate" : {
+          "type" : "string"
+        },
+        "cancellationReason" : {
+          "type" : "string"
+        },
+        "broadcastMediaType" : {
           "type" : "string"
         },
         "cancellationDate" : {
@@ -2629,12 +2635,6 @@
         "commercialOperator" : {
           "type" : "string"
         },
-        "cancellationReason" : {
-          "type" : "string"
-        },
-        "broadcastMediaType" : {
-          "type" : "string"
-        },
         "contractStatus" : {
           "type" : "string"
         },
@@ -2657,23 +2657,7 @@
         "ongoingCancellation" : {
           "type" : "boolean"
         },
-        "nonRenewalReason" : {
-          "type" : "string"
-        },
-        "cancellationUser" : {
-          "type" : "string"
-        },
-        "suspensionDate" : {
-          "type" : "string"
-        },
-        "thirdPartyPayerId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "digitalSignature" : {
-          "type" : "boolean"
-        },
-        "distributorId" : {
+        "updateUser" : {
           "type" : "string"
         },
         "ongoingCancellationDate" : {
@@ -2691,7 +2675,23 @@
         "fullValidationStatus" : {
           "type" : "string"
         },
-        "updateUser" : {
+        "nonRenewalReason" : {
+          "type" : "string"
+        },
+        "cancellationUser" : {
+          "type" : "string"
+        },
+        "suspensionDate" : {
+          "type" : "string"
+        },
+        "thirdPartyPayerId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "digitalSignature" : {
+          "type" : "boolean"
+        },
+        "creationDate" : {
           "type" : "string"
         },
         "duration" : {
@@ -2711,6 +2711,10 @@
         "commercialOperator" : {
           "type" : "string"
         },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "cancellationDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
@@ -2718,10 +2722,6 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
         },
         "cancellationReason" : {
           "type" : "string"
@@ -2733,10 +2733,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "workingDate" : {
-          "type" : "string",
-          "description" : "Format date attendu yyyymmdd"
-        },
         "contracts" : {
           "type" : "array",
           "items" : {
@@ -2746,6 +2742,10 @@
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "workingDate" : {
+          "type" : "string",
+          "description" : "Format date attendu yyyymmdd"
         }
       }
     },
@@ -2784,16 +2784,19 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
+        "startDate" : {
           "type" : "string"
         },
-        "startDate" : {
+        "distributorId" : {
           "type" : "string"
         },
         "userId" : {
           "type" : "string"
         },
         "endDate" : {
+          "type" : "string"
+        },
+        "broadcastMediaType" : {
           "type" : "string"
         },
         "personId" : {
@@ -2805,9 +2808,6 @@
           "format" : "int32"
         },
         "commercialOperator" : {
-          "type" : "string"
-        },
-        "broadcastMediaType" : {
           "type" : "string"
         },
         "contractStatus" : {
@@ -2823,13 +2823,13 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "distributorId" : {
+        "updateUser" : {
           "type" : "string"
         },
         "fullValidationStatus" : {
           "type" : "string"
         },
-        "updateUser" : {
+        "creationDate" : {
           "type" : "string"
         },
         "duration" : {
@@ -2893,13 +2893,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "creditCard" : {
           "$ref" : "CreditCardWithOwner"
@@ -3019,13 +3019,13 @@
             "$ref" : "VoucherLight"
           }
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         }
       }
     },
@@ -3194,9 +3194,6 @@
             "$ref" : "ProductWithFifthCategory"
           }
         },
-        "action" : {
-          "type" : "string"
-        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -3230,6 +3227,9 @@
           "format" : "int64"
         },
         "freeMethodOfPaymentReason" : {
+          "type" : "string"
+        },
+        "action" : {
           "type" : "string"
         }
       }
@@ -3284,13 +3284,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "creationDate" : {
-          "type" : "string"
-        },
         "active" : {
           "type" : "boolean"
         },
         "startDate" : {
+          "type" : "string"
+        },
+        "distributorId" : {
           "type" : "string"
         },
         "products" : {
@@ -3303,6 +3303,12 @@
           "type" : "string"
         },
         "endDate" : {
+          "type" : "string"
+        },
+        "cancellationReason" : {
+          "type" : "string"
+        },
+        "broadcastMediaType" : {
           "type" : "string"
         },
         "cancellationDate" : {
@@ -3331,12 +3337,6 @@
         "commercialOperator" : {
           "type" : "string"
         },
-        "cancellationReason" : {
-          "type" : "string"
-        },
-        "broadcastMediaType" : {
-          "type" : "string"
-        },
         "contractStatus" : {
           "type" : "string"
         },
@@ -3359,26 +3359,7 @@
         "ongoingCancellation" : {
           "type" : "boolean"
         },
-        "nonRenewalReason" : {
-          "type" : "string"
-        },
-        "cancellationUser" : {
-          "type" : "string"
-        },
-        "suspensionDate" : {
-          "type" : "string"
-        },
-        "thirdPartyPayerId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "reactivableAfterRegul" : {
-          "type" : "boolean"
-        },
-        "digitalSignature" : {
-          "type" : "boolean"
-        },
-        "distributorId" : {
+        "updateUser" : {
           "type" : "string"
         },
         "methodOfPaymentLabel" : {
@@ -3402,7 +3383,26 @@
         "fullValidationStatus" : {
           "type" : "string"
         },
-        "updateUser" : {
+        "nonRenewalReason" : {
+          "type" : "string"
+        },
+        "cancellationUser" : {
+          "type" : "string"
+        },
+        "suspensionDate" : {
+          "type" : "string"
+        },
+        "thirdPartyPayerId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "reactivableAfterRegul" : {
+          "type" : "boolean"
+        },
+        "digitalSignature" : {
+          "type" : "boolean"
+        },
+        "creationDate" : {
           "type" : "string"
         },
         "duration" : {
@@ -3520,16 +3520,16 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "voucherId" : {
           "type" : "string"
         },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
         }
       }
     },
@@ -3545,6 +3545,12 @@
           "type" : "string"
         },
         "endDate" : {
+          "type" : "string"
+        },
+        "cancellationReason" : {
+          "type" : "string"
+        },
+        "broadcastMediaType" : {
           "type" : "string"
         },
         "cancellationDate" : {
@@ -3570,12 +3576,6 @@
         "commercialOperator" : {
           "type" : "string"
         },
-        "cancellationReason" : {
-          "type" : "string"
-        },
-        "broadcastMediaType" : {
-          "type" : "string"
-        },
         "contractStatus" : {
           "type" : "string"
         },
@@ -3591,9 +3591,6 @@
         },
         "ongoingCancellation" : {
           "type" : "boolean"
-        },
-        "suspensionDate" : {
-          "type" : "string"
         },
         "majorProductId" : {
           "type" : "string"
@@ -3620,6 +3617,9 @@
           "type" : "string"
         },
         "fullValidationStatus" : {
+          "type" : "string"
+        },
+        "suspensionDate" : {
           "type" : "string"
         },
         "origin" : {
@@ -3764,10 +3764,10 @@
         "commercialLabel" : {
           "type" : "string"
         },
-        "productCategory" : {
+        "productType" : {
           "type" : "string"
         },
-        "productType" : {
+        "productCategory" : {
           "type" : "string"
         }
       }
@@ -3823,6 +3823,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "workingDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
@@ -3830,10 +3834,6 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
         }
       }
     },
@@ -3845,16 +3845,16 @@
         "productId" : {
           "type" : "string"
         },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
         },
         "fifthCategory" : {
           "type" : "boolean"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
         },
         "vouchers" : {
           "type" : "array",

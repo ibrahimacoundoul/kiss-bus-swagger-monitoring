@@ -201,13 +201,13 @@
         "lastName" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         },
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         }
       }
@@ -250,13 +250,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "commercialOperators" : {
-          "type" : "array",
-          "uniqueItems" : true,
-          "items" : {
-            "type" : "string"
-          }
-        },
         "person" : {
           "$ref" : "PersonCommon"
         },
@@ -264,6 +257,13 @@
           "type" : "array",
           "items" : {
             "$ref" : "Equipment"
+          }
+        },
+        "commercialOperators" : {
+          "type" : "array",
+          "uniqueItems" : true,
+          "items" : {
+            "type" : "string"
           }
         },
         "email" : {
@@ -343,10 +343,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "code" : {
+        "label" : {
           "type" : "string"
         },
-        "label" : {
+        "code" : {
           "type" : "string"
         }
       }

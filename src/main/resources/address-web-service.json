@@ -548,12 +548,12 @@
         "street4" : {
           "type" : "string"
         },
-        "undeliverabilityReason" : {
-          "type" : "string"
-        },
         "addressId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "undeliverabilityReason" : {
+          "type" : "string"
         },
         "valid" : {
           "type" : "boolean"
@@ -609,7 +609,7 @@
     "AddressInvalidateIn" : {
       "id" : "AddressInvalidateIn",
       "description" : "",
-      "required" : [ "personId", "invalidityReasonId", "pndcategory", "addressTypeId" ],
+      "required" : [ "personId", "invalidityReasonId", "addressTypeId", "pndcategory" ],
       "extends" : "",
       "properties" : {
         "personId" : {
@@ -621,22 +621,27 @@
           "type" : "string",
           "description" : "raison d'invalidation"
         },
-        "pndcategory" : {
-          "type" : "string",
-          "description" : "Code de la catégorie de NPAI"
-        },
         "addressTypeId" : {
           "type" : "string",
           "description" : "Definit le type d'adresse"
+        },
+        "pndcategory" : {
+          "type" : "string",
+          "description" : "Code de la catégorie de NPAI"
         }
       }
     },
     "AddressIn" : {
       "id" : "AddressIn",
       "description" : "",
-      "required" : [ "postalCode", "startDate", "personId", "addressType", "street1", "street2", "street3", "street4", "countryId", "city", "forcingIndicator" ],
+      "required" : [ "personId", "postalCode", "startDate", "addressType", "street1", "street2", "street3", "street4", "countryId", "city", "forcingIndicator" ],
       "extends" : "",
       "properties" : {
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Id de l’abonné"
+        },
         "postalCode" : {
           "type" : "string",
           "description" : "Le code postale de la ville"
@@ -644,11 +649,6 @@
         "startDate" : {
           "type" : "string",
           "description" : "date de début de validité de l'adresse, si vide date du jour par défaut Format date attendu yyyymmdd"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "Id de l’abonné"
         },
         "addressType" : {
           "type" : "string",

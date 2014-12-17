@@ -170,13 +170,13 @@
         "lastName" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         },
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         }
       }
@@ -199,11 +199,11 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "orderId" : {
-          "type" : "string"
-        },
         "person" : {
           "$ref" : "PersonProspect"
+        },
+        "orderId" : {
+          "type" : "string"
         },
         "email" : {
           "type" : "string"
@@ -304,13 +304,13 @@
         "lastName" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         },
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         }
       }

@@ -1064,11 +1064,11 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "directDebitStatuts" : {
-          "type" : "string"
-        },
         "isActive" : {
           "type" : "boolean"
+        },
+        "directDebitStatuts" : {
+          "type" : "string"
         },
         "label" : {
           "type" : "string"
@@ -1111,21 +1111,21 @@
     "PNDCategoriesCodeTable" : {
       "id" : "PNDCategoriesCodeTable",
       "description" : "",
-      "required" : [ "administration", "marketing", "numberOfPND" ],
+      "required" : [ "administration", "numberOfPND", "marketing" ],
       "extends" : "",
       "properties" : {
         "administration" : {
           "type" : "boolean",
           "description" : "Si '1', indique que cette catégorie est de type gestion"
         },
-        "marketing" : {
-          "type" : "boolean",
-          "description" : "Si '1', indique que cette catégorie est de type marketing"
-        },
         "numberOfPND" : {
           "type" : "integer",
           "format" : "int32",
           "description" : "Nombre de retour PND sur cette catégorie pour effectivement invalider l'adresse"
+        },
+        "marketing" : {
+          "type" : "boolean",
+          "description" : "Si '1', indique que cette catégorie est de type marketing"
         },
         "label" : {
           "type" : "string"
@@ -1320,10 +1320,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "code" : {
+        "label" : {
           "type" : "string"
         },
-        "label" : {
+        "code" : {
           "type" : "string"
         }
       }
@@ -1356,15 +1356,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "isScratchCard" : {
-          "type" : "boolean"
-        },
-        "isMultiple" : {
-          "type" : "boolean"
-        },
-        "isCashOrder" : {
-          "type" : "boolean"
-        },
         "isRefund" : {
           "type" : "boolean"
         },
@@ -1381,6 +1372,15 @@
           "type" : "boolean"
         },
         "isCreditCard" : {
+          "type" : "boolean"
+        },
+        "isScratchCard" : {
+          "type" : "boolean"
+        },
+        "isMultiple" : {
+          "type" : "boolean"
+        },
+        "isCashOrder" : {
           "type" : "boolean"
         },
         "label" : {
@@ -1501,6 +1501,9 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "broadcastMediaType" : {
+          "type" : "string"
+        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -1508,9 +1511,6 @@
           "type" : "string"
         },
         "commercialOperator" : {
-          "type" : "string"
-        },
-        "broadcastMediaType" : {
           "type" : "string"
         },
         "label" : {
@@ -1640,7 +1640,19 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "catCliId" : {
+          "type" : "string"
+        },
+        "catCliLab" : {
+          "type" : "string"
+        },
+        "catCliDetId" : {
+          "type" : "string"
+        },
         "catCliDetLab" : {
+          "type" : "string"
+        },
+        "origId" : {
           "type" : "string"
         },
         "origLab" : {
@@ -1654,18 +1666,6 @@
         },
         "cidentSubCat" : {
           "$ref" : "CodeIdent"
-        },
-        "catCliLab" : {
-          "type" : "string"
-        },
-        "catCliDetId" : {
-          "type" : "string"
-        },
-        "origId" : {
-          "type" : "string"
-        },
-        "catCliId" : {
-          "type" : "string"
         }
       }
     },
