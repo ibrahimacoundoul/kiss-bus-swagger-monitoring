@@ -273,13 +273,13 @@
         "commentType" : {
           "type" : "string"
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "creationUser" : {
           "type" : "string"
@@ -333,11 +333,11 @@
         "freeText" : {
           "type" : "string"
         },
-        "actOfManagemnetId" : {
-          "type" : "string"
-        },
         "updateOnLinkedContract" : {
           "type" : "boolean"
+        },
+        "actOfManagemnetId" : {
+          "type" : "string"
         }
       }
     },
@@ -357,6 +357,9 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "creationDate" : {
+          "type" : "string"
+        },
         "actOfManagementId" : {
           "type" : "string"
         },
@@ -377,9 +380,6 @@
           "type" : "string"
         },
         "commentLabel" : {
-          "type" : "string"
-        },
-        "creationDate" : {
           "type" : "string"
         }
       }

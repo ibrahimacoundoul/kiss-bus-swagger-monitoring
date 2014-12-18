@@ -689,13 +689,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     },
@@ -733,13 +733,10 @@
         "cmc7" : {
           "type" : "string"
         },
-        "emissionDesk" : {
-          "type" : "string"
-        },
         "cashOrderId" : {
           "type" : "string"
         },
-        "encashmentImageId" : {
+        "emissionDesk" : {
           "type" : "string"
         },
         "encashmentDate" : {
@@ -747,6 +744,9 @@
           "format" : "int64"
         },
         "encashmentStatus" : {
+          "type" : "string"
+        },
+        "encashmentImageId" : {
           "type" : "string"
         },
         "bankTransfertId" : {
@@ -779,10 +779,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "startDate" : {
           "$ref" : "date-time",
           "description" : "Format date attendu yyyymmdd"
@@ -791,13 +787,17 @@
           "$ref" : "date-time",
           "description" : "Format date attendu yyyymmdd"
         },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "actOfManagementId" : {
+          "type" : "string"
+        },
         "encashmentType" : {
           "type" : "string"
         },
         "encashmentLogicalId" : {
-          "type" : "string"
-        },
-        "actOfManagementId" : {
           "type" : "string"
         }
       }
@@ -820,13 +820,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "motiveId" : {
           "type" : "string"
@@ -893,9 +893,6 @@
         "emissionDesk" : {
           "type" : "string"
         },
-        "cashOrderId" : {
-          "type" : "string"
-        },
         "validationDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
@@ -907,6 +904,9 @@
         "encashmentimageid" : {
           "type" : "string"
         },
+        "cashOrderId" : {
+          "type" : "string"
+        },
         "owner" : {
           "type" : "string"
         },
@@ -914,13 +914,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "motiveId" : {
           "type" : "string"
@@ -955,13 +955,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "motiveId" : {
           "type" : "string"
@@ -1028,10 +1028,10 @@
             "$ref" : "PaymentPerson"
           }
         },
-        "bankTransferId" : {
+        "encashmentimageid" : {
           "type" : "string"
         },
-        "encashmentimageid" : {
+        "bankTransferId" : {
           "type" : "string"
         },
         "owner" : {
@@ -1041,13 +1041,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "motiveId" : {
           "type" : "string"
@@ -1117,11 +1117,11 @@
             "$ref" : "PaymentPerson"
           }
         },
-        "encashmentId" : {
+        "actOfManagementId" : {
           "type" : "integer",
           "format" : "int64"
         },
-        "actOfManagementId" : {
+        "encashmentId" : {
           "type" : "integer",
           "format" : "int64"
         }
@@ -1155,13 +1155,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "motiveId" : {
           "type" : "string"
@@ -1176,6 +1176,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "actOfManagementId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "encashmentId" : {
           "type" : "integer",
           "format" : "int64"
@@ -1183,10 +1187,6 @@
         "rejectMotiveId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "actOfManagementId" : {
-          "type" : "integer",
-          "format" : "int64"
         },
         "comment" : {
           "type" : "string"

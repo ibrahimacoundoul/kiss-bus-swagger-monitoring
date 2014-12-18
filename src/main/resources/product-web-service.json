@@ -1579,10 +1579,10 @@
             "type" : "string"
           }
         },
-        "isGenericProductBillable" : {
+        "fifthCategory" : {
           "type" : "boolean"
         },
-        "fifthCategory" : {
+        "isGenericProductBillable" : {
           "type" : "boolean"
         },
         "includedProducts" : {
@@ -1675,16 +1675,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "contracts" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "ContractToValidate"
-          }
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "workingDate" : {
           "type" : "string"
         },
@@ -1697,6 +1687,16 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "contracts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ContractToValidate"
+          }
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "vouchers" : {
           "type" : "array",
@@ -2089,6 +2089,9 @@
         "startDate" : {
           "type" : "string"
         },
+        "action" : {
+          "type" : "string"
+        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -2122,9 +2125,6 @@
           "items" : {
             "$ref" : "TransverseProductWithFifthCategory"
           }
-        },
-        "action" : {
-          "type" : "string"
         }
       }
     },
@@ -2170,12 +2170,6 @@
             "type" : "string"
           }
         },
-        "technicalIds" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "ProductTechnicalIds"
-          }
-        },
         "productType" : {
           "type" : "string"
         },
@@ -2184,6 +2178,12 @@
         },
         "themeId" : {
           "type" : "string"
+        },
+        "technicalIds" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ProductTechnicalIds"
+          }
         }
       }
     },
@@ -2229,13 +2229,13 @@
             "$ref" : "ProductContractIn"
           }
         },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "countryId" : {
           "type" : "string"
@@ -2315,6 +2315,9 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "action" : {
+          "type" : "string"
+        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -2346,9 +2349,6 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "action" : {
-          "type" : "string"
         }
       }
     },

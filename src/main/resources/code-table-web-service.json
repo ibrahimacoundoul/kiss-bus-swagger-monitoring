@@ -983,11 +983,11 @@
         "genericProduct" : {
           "type" : "boolean"
         },
-        "technicalOffer" : {
-          "type" : "boolean"
-        },
         "productCategory" : {
           "type" : "string"
+        },
+        "technicalOffer" : {
+          "type" : "boolean"
         },
         "label" : {
           "type" : "string"
@@ -1064,11 +1064,11 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "isActive" : {
-          "type" : "boolean"
-        },
         "directDebitStatuts" : {
           "type" : "string"
+        },
+        "isActive" : {
+          "type" : "boolean"
         },
         "label" : {
           "type" : "string"
@@ -1111,17 +1111,17 @@
     "PNDCategoriesCodeTable" : {
       "id" : "PNDCategoriesCodeTable",
       "description" : "",
-      "required" : [ "administration", "numberOfPND", "marketing" ],
+      "required" : [ "numberOfPND", "administration", "marketing" ],
       "extends" : "",
       "properties" : {
-        "administration" : {
-          "type" : "boolean",
-          "description" : "Si '1', indique que cette catégorie est de type gestion"
-        },
         "numberOfPND" : {
           "type" : "integer",
           "format" : "int32",
           "description" : "Nombre de retour PND sur cette catégorie pour effectivement invalider l'adresse"
+        },
+        "administration" : {
+          "type" : "boolean",
+          "description" : "Si '1', indique que cette catégorie est de type gestion"
         },
         "marketing" : {
           "type" : "boolean",
@@ -1320,10 +1320,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "label" : {
+        "code" : {
           "type" : "string"
         },
-        "code" : {
+        "label" : {
           "type" : "string"
         }
       }
@@ -1501,9 +1501,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "broadcastMediaType" : {
-          "type" : "string"
-        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -1511,6 +1508,9 @@
           "type" : "string"
         },
         "commercialOperator" : {
+          "type" : "string"
+        },
+        "broadcastMediaType" : {
           "type" : "string"
         },
         "label" : {
@@ -1640,19 +1640,7 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "catCliId" : {
-          "type" : "string"
-        },
-        "catCliLab" : {
-          "type" : "string"
-        },
-        "catCliDetId" : {
-          "type" : "string"
-        },
         "catCliDetLab" : {
-          "type" : "string"
-        },
-        "origId" : {
           "type" : "string"
         },
         "origLab" : {
@@ -1666,6 +1654,18 @@
         },
         "cidentSubCat" : {
           "$ref" : "CodeIdent"
+        },
+        "catCliId" : {
+          "type" : "string"
+        },
+        "catCliLab" : {
+          "type" : "string"
+        },
+        "catCliDetId" : {
+          "type" : "string"
+        },
+        "origId" : {
+          "type" : "string"
         }
       }
     },
@@ -1696,10 +1696,10 @@
         "initiativeAbonne" : {
           "type" : "string"
         },
-        "initiativeCanal" : {
+        "impaye" : {
           "type" : "string"
         },
-        "impaye" : {
+        "initiativeCanal" : {
           "type" : "string"
         },
         "indEngagement" : {

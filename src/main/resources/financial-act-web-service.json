@@ -407,6 +407,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "creationDate" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "amount" : {
           "type" : "number",
           "format" : "double"
@@ -429,21 +433,17 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "statusId" : {
+        "needChequeId" : {
+          "type" : "boolean"
+        },
+        "creationUserId" : {
           "type" : "string"
         },
         "categoryId" : {
           "type" : "string"
         },
-        "creationUserId" : {
+        "statusId" : {
           "type" : "string"
-        },
-        "needChequeId" : {
-          "type" : "boolean"
-        },
-        "creationDate" : {
-          "type" : "integer",
-          "format" : "int64"
         }
       }
     },
@@ -525,10 +525,10 @@
           "type" : "integer",
           "format" : "int64"
         },
-        "statusId" : {
+        "categoryId" : {
           "type" : "string"
         },
-        "categoryId" : {
+        "statusId" : {
           "type" : "string"
         },
         "modeId" : {
@@ -539,6 +539,10 @@
         },
         "comment" : {
           "type" : "string"
+        },
+        "creationDate" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "amount" : {
           "type" : "number",
@@ -562,15 +566,11 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "creationUserId" : {
-          "type" : "string"
-        },
         "needChequeId" : {
           "type" : "boolean"
         },
-        "creationDate" : {
-          "type" : "integer",
-          "format" : "int64"
+        "creationUserId" : {
+          "type" : "string"
         }
       }
     },
@@ -579,10 +579,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "startDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
@@ -594,6 +590,10 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "motives" : {
           "type" : "array",

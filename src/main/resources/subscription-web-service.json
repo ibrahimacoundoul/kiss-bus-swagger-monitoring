@@ -149,10 +149,10 @@
         "commercialOperator" : {
           "type" : "string"
         },
-        "transactionId" : {
+        "contractStatus" : {
           "type" : "string"
         },
-        "contractStatus" : {
+        "transactionId" : {
           "type" : "string"
         }
       }
@@ -186,11 +186,11 @@
             "$ref" : "Equipment"
           }
         },
-        "person" : {
-          "$ref" : "PersonToSubscribe"
-        },
         "orderId" : {
           "type" : "string"
+        },
+        "person" : {
+          "$ref" : "PersonToSubscribe"
         },
         "email" : {
           "type" : "string"
@@ -198,12 +198,12 @@
         "payment" : {
           "$ref" : "PaymentToSubscribe"
         },
-        "equipmentConfig" : {
-          "type" : "string"
-        },
         "shipmentFees" : {
           "type" : "number",
           "format" : "double"
+        },
+        "equipmentConfig" : {
+          "type" : "string"
         },
         "affectationType" : {
           "type" : "string"
@@ -230,10 +230,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "phoneNumber" : {
+        "phoneType" : {
           "type" : "string"
         },
-        "phoneType" : {
+        "phoneNumber" : {
           "type" : "string"
         }
       }
@@ -309,10 +309,10 @@
         "companyId" : {
           "type" : "string"
         },
-        "companyName" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyName" : {
           "type" : "string"
         }
       }
@@ -434,6 +434,9 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "action" : {
+          "type" : "string"
+        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -481,9 +484,6 @@
         },
         "freeMethodOfPaymentReason" : {
           "type" : "string"
-        },
-        "action" : {
-          "type" : "string"
         }
       }
     },
@@ -505,15 +505,15 @@
           "type" : "integer",
           "format" : "int64"
         },
+        "shipmentFees" : {
+          "type" : "number",
+          "format" : "double"
+        },
         "availabilityFees" : {
           "type" : "number",
           "format" : "double"
         },
         "firstAmount" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "shipmentFees" : {
           "type" : "number",
           "format" : "double"
         }

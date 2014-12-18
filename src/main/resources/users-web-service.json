@@ -110,9 +110,13 @@
     "UserIn" : {
       "id" : "UserIn",
       "description" : "",
-      "required" : [ "userId", "profile", "firstName", "lastName", "valid" ],
+      "required" : [ "valid", "userId", "profile", "firstName", "lastName" ],
       "extends" : "",
       "properties" : {
+        "valid" : {
+          "type" : "boolean",
+          "description" : "Utilisateur activé/désactivé"
+        },
         "userId" : {
           "type" : "string",
           "description" : "Utilisateur effectuant l'opération"
@@ -131,10 +135,6 @@
         },
         "organization" : {
           "type" : "string"
-        },
-        "valid" : {
-          "type" : "boolean",
-          "description" : "Utilisateur activé/désactivé"
         }
       }
     }

@@ -173,10 +173,10 @@
         "companyId" : {
           "type" : "string"
         },
-        "companyName" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyName" : {
           "type" : "string"
         }
       }
@@ -186,10 +186,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "phoneNumber" : {
+        "phoneType" : {
           "type" : "string"
         },
-        "phoneType" : {
+        "phoneNumber" : {
           "type" : "string"
         }
       }
@@ -199,11 +199,11 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "person" : {
-          "$ref" : "PersonProspect"
-        },
         "orderId" : {
           "type" : "string"
+        },
+        "person" : {
+          "$ref" : "PersonProspect"
         },
         "email" : {
           "type" : "string"
@@ -307,10 +307,10 @@
         "companyId" : {
           "type" : "string"
         },
-        "companyName" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyName" : {
           "type" : "string"
         }
       }

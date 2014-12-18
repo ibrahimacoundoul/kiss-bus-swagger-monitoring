@@ -270,17 +270,8 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "directDebitTypeLabel" : {
-          "type" : "string"
-        },
         "rejectLabel" : {
           "type" : "string"
-        },
-        "rejectDate" : {
-          "type" : "string"
-        },
-        "isRepresentable" : {
-          "type" : "boolean"
         },
         "rejectCode" : {
           "type" : "string"
@@ -291,6 +282,15 @@
         "directDebitId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "directDebitTypeLabel" : {
+          "type" : "string"
+        },
+        "rejectDate" : {
+          "type" : "string"
+        },
+        "isRepresentable" : {
+          "type" : "boolean"
         },
         "month" : {
           "type" : "string"

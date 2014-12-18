@@ -786,10 +786,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "phoneNumber" : {
+        "phoneType" : {
           "type" : "string"
         },
-        "phoneType" : {
+        "phoneNumber" : {
           "type" : "string"
         }
       }
@@ -849,19 +849,18 @@
     "PaymentMeans" : {
       "id" : "PaymentMeans",
       "description" : "",
-      "required" : [ "createdDate", "iban", "contractId" ],
+      "required" : [ "iban", "contractId", "createdDate" ],
       "extends" : "",
       "properties" : {
-        "createdDate" : {
-          "type" : "string",
-          "description" : "Date de création du moyen de paiment, format mm/aa"
-        },
         "iban" : {
           "type" : "string",
           "description" : "L'iban"
         },
         "bic" : {
           "type" : "string"
+        },
+        "creditCard" : {
+          "$ref" : "CreditCardLight"
         },
         "methodOfPayment" : {
           "type" : "string"
@@ -871,8 +870,9 @@
           "format" : "int32",
           "description" : "Le contrat associé au moyen de paiement"
         },
-        "creditCard" : {
-          "$ref" : "CreditCardLight"
+        "createdDate" : {
+          "type" : "string",
+          "description" : "Date de création du moyen de paiment, format mm/aa"
         },
         "directDebitDate" : {
           "type" : "integer",
@@ -1213,10 +1213,10 @@
         "companyId" : {
           "type" : "string"
         },
-        "companyName" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyName" : {
           "type" : "string"
         }
       }
@@ -1316,11 +1316,11 @@
             "$ref" : "PhoneCommon"
           }
         },
-        "person" : {
-          "$ref" : "PersonProspect"
-        },
         "orderId" : {
           "type" : "string"
+        },
+        "person" : {
+          "$ref" : "PersonProspect"
         },
         "email" : {
           "type" : "string"
@@ -1347,12 +1347,12 @@
             "$ref" : "InitCreditCardPaymentAuthorizationIn"
           }
         },
+        "postalCode" : {
+          "type" : "string"
+        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
-        },
-        "postalCode" : {
-          "type" : "string"
         },
         "countryId" : {
           "type" : "string"
@@ -1442,10 +1442,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "label" : {
+        "code" : {
           "type" : "string"
         },
-        "code" : {
+        "label" : {
           "type" : "string"
         }
       }

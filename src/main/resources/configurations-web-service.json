@@ -256,7 +256,7 @@
     "ConfigurationWithProductsEquipments" : {
       "id" : "ConfigurationWithProductsEquipments",
       "description" : "",
-      "required" : [ "ispId", "sortOrder", "configCategory", "configCategoryLabel", "isIspId" ],
+      "required" : [ "ispId", "sortOrder", "isIspId", "configCategory", "configCategoryLabel" ],
       "extends" : "",
       "properties" : {
         "ispId" : {
@@ -274,6 +274,10 @@
           "format" : "int32",
           "description" : "Colonne de tri"
         },
+        "isIspId" : {
+          "type" : "string",
+          "description" : "Indicateur d'éligibilité auprès d'un FAI"
+        },
         "configCategory" : {
           "type" : "string",
           "description" : "Code catégorie permettant de filtrer les configurations matérielles"
@@ -282,16 +286,12 @@
           "type" : "string",
           "description" : "Libellé catégorie permettant de filtrer les configurations matérielles"
         },
-        "isIspId" : {
-          "type" : "string",
-          "description" : "Indicateur d'éligibilité auprès d'un FAI"
+        "equipmentConfig" : {
+          "type" : "string"
         },
         "firstAmount" : {
           "type" : "number",
           "format" : "double"
-        },
-        "equipmentConfig" : {
-          "type" : "string"
         },
         "equipmentConfigLabel" : {
           "type" : "string"
@@ -309,12 +309,12 @@
             "$ref" : "EquipmentTypeResponse"
           }
         },
+        "equipmentConfig" : {
+          "type" : "string"
+        },
         "firstAmount" : {
           "type" : "number",
           "format" : "double"
-        },
-        "equipmentConfig" : {
-          "type" : "string"
         },
         "equipmentConfigLabel" : {
           "type" : "string"
@@ -395,9 +395,13 @@
     "ConfigurationParameters" : {
       "id" : "ConfigurationParameters",
       "description" : "",
-      "required" : [ "broadcastVectorId", "ispId", "commercialOperator", "postalCode", "origin", "duration", "methodOfPayment", "startDate", "countryId", "action" ],
+      "required" : [ "action", "broadcastVectorId", "ispId", "commercialOperator", "postalCode", "origin", "duration", "methodOfPayment", "startDate", "countryId" ],
       "extends" : "",
       "properties" : {
+        "action" : {
+          "type" : "string",
+          "description" : "Type d'action en cours"
+        },
         "broadcastVectorId" : {
           "type" : "string",
           "description" : "Identifiant du vecteur de diffusion"
@@ -409,11 +413,6 @@
         "commercialOperator" : {
           "type" : "string",
           "description" : "Identifiant de l'opérateur "
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "Identifiant de l'abonné"
         },
         "postalCode" : {
           "type" : "string",
@@ -440,6 +439,11 @@
           "format" : "int32",
           "description" : "Numéro de contrat"
         },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Identifiant de l'abonné"
+        },
         "reasonId" : {
           "type" : "string",
           "description" : "Motif logisitique"
@@ -454,10 +458,6 @@
         "countryId" : {
           "type" : "string",
           "description" : "Le pays de l'abonné"
-        },
-        "action" : {
-          "type" : "string",
-          "description" : "Type d'action en cours"
         }
       }
     },
@@ -535,6 +535,9 @@
         "ispId" : {
           "type" : "string"
         },
+        "equipmentConfig" : {
+          "type" : "string"
+        },
         "equipmentTypes" : {
           "type" : "array",
           "items" : {
@@ -545,23 +548,20 @@
           "type" : "number",
           "format" : "double"
         },
-        "equipmentConfig" : {
-          "type" : "string"
-        },
         "sortOrder" : {
           "type" : "integer",
           "format" : "int32"
         },
-        "configCategory" : {
-          "type" : "string"
-        },
-        "configCategoryLabel" : {
+        "equipmentConfigLabel" : {
           "type" : "string"
         },
         "isIspId" : {
           "type" : "string"
         },
-        "equipmentConfigLabel" : {
+        "configCategory" : {
+          "type" : "string"
+        },
+        "configCategoryLabel" : {
           "type" : "string"
         }
       }
@@ -611,6 +611,9 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "action" : {
+          "type" : "string"
+        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -644,9 +647,6 @@
           "items" : {
             "$ref" : "EquipmentTypeInput"
           }
-        },
-        "action" : {
-          "type" : "string"
         }
       }
     },
@@ -668,10 +668,10 @@
         "deposit" : {
           "type" : "boolean"
         },
-        "rental" : {
+        "accessorie" : {
           "type" : "boolean"
         },
-        "accessorie" : {
+        "rental" : {
           "type" : "boolean"
         }
       }
