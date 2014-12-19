@@ -299,6 +299,9 @@
         "renewalDate" : {
           "type" : "string"
         },
+        "linkedBitmap" : {
+          "type" : "string"
+        },
         "duration" : {
           "type" : "integer",
           "format" : "int32"
@@ -542,26 +545,37 @@
     "EmailOut" : {
       "id" : "EmailOut",
       "description" : "",
+      "required" : [ "startDate", "email", "emailId", "endDate", "emailType", "invalidityReason", "valid" ],
       "extends" : "",
       "properties" : {
         "startDate" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Date de début de validité de l'email"
         },
         "email" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Adresse email"
         },
         "emailId" : {
           "type" : "integer",
-          "format" : "int64"
+          "format" : "int64",
+          "description" : "Identifiant de l'email"
         },
         "endDate" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Date de fin de validité de l'email"
+        },
+        "emailType" : {
+          "type" : "string",
+          "description" : "Type de l'email"
         },
         "invalidityReason" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Motif d'invalidation de l'email"
         },
         "valid" : {
-          "type" : "boolean"
+          "type" : "boolean",
+          "description" : "Validité de l'email"
         }
       }
     },

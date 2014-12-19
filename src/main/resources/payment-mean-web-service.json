@@ -1073,8 +1073,11 @@
         },
         "directDebitDate" : {
           "type" : "integer",
-          "format" : "int32",
-          "description" : "Format date attendu yyyymmdd"
+          "format" : "int32"
+        },
+        "thirdPayorId" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     },

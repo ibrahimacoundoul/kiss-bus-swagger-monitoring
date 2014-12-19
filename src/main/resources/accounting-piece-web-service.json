@@ -267,37 +267,51 @@
     "AccountingPiece" : {
       "id" : "AccountingPiece",
       "description" : "",
+      "required" : [ "accountingDate", "crmLedgerId", "sapLedgerId", "accountingPieceLabel", "accountingEntries", "crmOperatorId", "crmOperatorLabel", "crmLedgerLabel", "sapOperatorId", "transfertDate" ],
       "extends" : "",
       "properties" : {
         "accountingDate" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Date comptable de la pièce"
         },
         "crmLedgerId" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Code du journal Cgaweb"
+        },
+        "sapLedgerId" : {
+          "type" : "string",
+          "description" : "Code du journal SAP (logiciel de comptablité général)"
         },
         "accountingPieceLabel" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Libellé de la pièce comptable"
         },
         "accountingEntries" : {
           "type" : "array",
+          "description" : "Détail des écritures",
           "items" : {
             "$ref" : "AccountingEntry"
           }
         },
         "crmOperatorId" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Code de l'opérateur comptable cgaweb"
         },
         "crmOperatorLabel" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Libellé de l'opérateur comptable cgaweb"
         },
         "crmLedgerLabel" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Libellé du journal Cgaweb"
         },
         "sapOperatorId" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Code de l'opérateur comptable SAP"
         },
         "transfertDate" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Date de déversement"
         }
       }
     },
