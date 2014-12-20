@@ -74,7 +74,7 @@
       "method" : "POST",
       "summary" : "validation souscription",
       "notes" : "subscriptionValidation",
-      "type" : "ResponseWrapper«SubscriptionIn»",
+      "type" : "ResponseWrapper«ValidationIn»",
       "nickname" : "subscriptionValidation",
       "parameters" : [ {
         "name" : "userId",
@@ -121,7 +121,7 @@
         "description" : "Informations de souscription",
         "defaultValue" : "",
         "required" : true,
-        "type" : "SubscriptionIn",
+        "type" : "ValidationIn",
         "paramType" : "body",
         "allowMultiple" : false
       } ],
@@ -157,6 +157,26 @@
         }
       }
     },
+    "ResponseWrapper«ValidationIn»" : {
+      "id" : "ResponseWrapper«ValidationIn»",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "severity" : {
+          "type" : "string",
+          "enum" : [ "WARN", "ERROR", "FATAL", "SUCCESS" ]
+        },
+        "returnCode" : {
+          "type" : "string"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "data" : {
+          "$ref" : "ValidationIn"
+        }
+      }
+    },
     "SubscriptionIn" : {
       "id" : "SubscriptionIn",
       "description" : "",
@@ -166,12 +186,6 @@
           "type" : "array",
           "items" : {
             "$ref" : "PhoneCommon"
-          }
-        },
-        "contracts" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "ContractToSubscribe"
           }
         },
         "vouchers" : {
@@ -184,6 +198,12 @@
           "type" : "array",
           "items" : {
             "$ref" : "Equipment"
+          }
+        },
+        "contracts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ContractToSubscribe"
           }
         },
         "orderId" : {
@@ -248,6 +268,36 @@
         },
         "equipmentType" : {
           "type" : "string"
+        }
+      }
+    },
+    "PaymentMeansCreditCardToSubscribeIn" : {
+      "id" : "PaymentMeansCreditCardToSubscribeIn",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "bankCustomerId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PaymentMeansToValidateIn" : {
+      "id" : "PaymentMeansToValidateIn",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "creditCard" : {
+          "$ref" : "PaymentMeansCreditCardToValidateIn"
+        },
+        "directDebitDate" : {
+          "type" : "string"
+        },
+        "thirdPayorId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "directDebit" : {
+          "$ref" : "DirectDebit"
         }
       }
     },
@@ -317,26 +367,6 @@
         }
       }
     },
-    "PaymentMeansSubscription" : {
-      "id" : "PaymentMeansSubscription",
-      "description" : "",
-      "extends" : "",
-      "properties" : {
-        "directDebitDate" : {
-          "type" : "string"
-        },
-        "thirdPayorId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "directDebit" : {
-          "$ref" : "DirectDebit"
-        },
-        "bankCustomerId" : {
-          "type" : "string"
-        }
-      }
-    },
     "PaymentToSubscribe" : {
       "id" : "PaymentToSubscribe",
       "description" : "",
@@ -352,23 +382,26 @@
         }
       }
     },
-    "ResponseWrapper«SubscriptionIn»" : {
-      "id" : "ResponseWrapper«SubscriptionIn»",
+    "CreditCardWithOwner" : {
+      "id" : "CreditCardWithOwner",
       "description" : "",
       "extends" : "",
       "properties" : {
-        "severity" : {
+        "cryptogram" : {
+          "type" : "string"
+        },
+        "expirationDate" : {
           "type" : "string",
-          "enum" : [ "WARN", "ERROR", "FATAL", "SUCCESS" ]
+          "description" : "Format date attendu yyyymm"
         },
-        "returnCode" : {
+        "number" : {
           "type" : "string"
         },
-        "message" : {
+        "owner" : {
           "type" : "string"
         },
-        "data" : {
-          "$ref" : "SubscriptionIn"
+        "type" : {
+          "type" : "string"
         }
       }
     },
@@ -395,6 +428,107 @@
         },
         "fifthCategory" : {
           "type" : "boolean"
+        }
+      }
+    },
+    "ValidationIn" : {
+      "id" : "ValidationIn",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "phones" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "PhoneCommon"
+          }
+        },
+        "vouchers" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "VoucherLight"
+          }
+        },
+        "equipments" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "Equipment"
+          }
+        },
+        "contracts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ContractToValidateSubscriptionIn"
+          }
+        },
+        "orderId" : {
+          "type" : "string"
+        },
+        "person" : {
+          "$ref" : "PersonToSubscribe"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "payment" : {
+          "$ref" : "PaymentToSubscribe"
+        },
+        "shipmentFees" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "equipmentConfig" : {
+          "type" : "string"
+        },
+        "affectationType" : {
+          "type" : "string"
+        },
+        "skipAvailabilityFees" : {
+          "type" : "boolean"
+        },
+        "skipShipmentFees" : {
+          "type" : "boolean"
+        },
+        "skipPaymentOnAccount" : {
+          "type" : "boolean"
+        },
+        "forceConfirmedContract" : {
+          "type" : "boolean"
+        },
+        "address" : {
+          "$ref" : "AddressCommon"
+        }
+      }
+    },
+    "PaymentMeansCreditCardToValidateIn" : {
+      "id" : "PaymentMeansCreditCardToValidateIn",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "creditCard" : {
+          "$ref" : "CreditCardWithOwner"
+        },
+        "bankCustomerId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PaymentMeansToSubscribeIn" : {
+      "id" : "PaymentMeansToSubscribeIn",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "creditCard" : {
+          "$ref" : "PaymentMeansCreditCardToSubscribeIn"
+        },
+        "directDebitDate" : {
+          "type" : "string"
+        },
+        "thirdPayorId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "directDebit" : {
+          "$ref" : "DirectDebit"
         }
       }
     },
@@ -434,6 +568,9 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "payment" : {
+          "$ref" : "PaymentMeansToSubscribeIn"
+        },
         "action" : {
           "type" : "string"
         },
@@ -468,9 +605,6 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "payment" : {
-          "$ref" : "PaymentMeansSubscription"
         },
         "products" : {
           "type" : "array",
@@ -516,6 +650,64 @@
         "firstAmount" : {
           "type" : "number",
           "format" : "double"
+        }
+      }
+    },
+    "ContractToValidateSubscriptionIn" : {
+      "id" : "ContractToValidateSubscriptionIn",
+      "description" : "",
+      "extends" : "",
+      "properties" : {
+        "payment" : {
+          "$ref" : "PaymentMeansToValidateIn"
+        },
+        "action" : {
+          "type" : "string"
+        },
+        "broadcastVectorId" : {
+          "type" : "string"
+        },
+        "ispId" : {
+          "type" : "string"
+        },
+        "commercialOperator" : {
+          "type" : "string"
+        },
+        "origin" : {
+          "type" : "string"
+        },
+        "duration" : {
+          "type" : "string"
+        },
+        "methodOfPayment" : {
+          "type" : "string"
+        },
+        "catalog" : {
+          "type" : "string"
+        },
+        "dateToDate" : {
+          "type" : "boolean"
+        },
+        "startDate" : {
+          "type" : "string",
+          "description" : "Format date attendu yyyymmdd"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "products" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ProductWithFifthCategory"
+          }
+        },
+        "sponsorId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "freeMethodOfPaymentReason" : {
+          "type" : "string"
         }
       }
     }
