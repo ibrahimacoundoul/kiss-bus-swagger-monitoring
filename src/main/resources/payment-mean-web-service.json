@@ -870,14 +870,14 @@
           "format" : "int32",
           "description" : "Le contrat associé au moyen de paiement"
         },
-        "createdDate" : {
-          "type" : "string",
-          "description" : "Date de création du moyen de paiment, format mm/aa"
-        },
         "directDebitDate" : {
           "type" : "integer",
           "format" : "int32",
           "description" : "Jour de prélèvement"
+        },
+        "createdDate" : {
+          "type" : "string",
+          "description" : "Date de création du moyen de paiment, format mm/aa"
         }
       }
     },
@@ -1213,13 +1213,13 @@
         "lastName" : {
           "type" : "string"
         },
+        "companyName" : {
+          "type" : "string"
+        },
         "companyId" : {
           "type" : "string"
         },
         "civility" : {
-          "type" : "string"
-        },
-        "companyName" : {
           "type" : "string"
         }
       }

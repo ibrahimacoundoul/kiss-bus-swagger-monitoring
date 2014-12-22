@@ -900,13 +900,13 @@
         "lastName" : {
           "type" : "string"
         },
+        "companyName" : {
+          "type" : "string"
+        },
         "companyId" : {
           "type" : "string"
         },
         "civility" : {
-          "type" : "string"
-        },
-        "companyName" : {
           "type" : "string"
         }
       }
@@ -1013,10 +1013,6 @@
         "email" : {
           "type" : "string"
         },
-        "emailId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "endDate" : {
           "type" : "string"
         },
@@ -1025,6 +1021,10 @@
         },
         "invalidityReason" : {
           "type" : "string"
+        },
+        "emailId" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     },

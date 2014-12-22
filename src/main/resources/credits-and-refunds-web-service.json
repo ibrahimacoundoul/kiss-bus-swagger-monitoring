@@ -1066,9 +1066,6 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "opposeMotiveId" : {
-          "type" : "string"
-        },
         "chequeId" : {
           "type" : "string"
         },
@@ -1076,6 +1073,9 @@
           "type" : "string"
         },
         "initMotiveId" : {
+          "type" : "string"
+        },
+        "opposeMotiveId" : {
           "type" : "string"
         }
       }
@@ -1183,25 +1183,25 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "lettercheckid" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "actofmanagmentid" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "accountingOperatorId" : {
-          "type" : "string"
-        },
         "actOfManagmentHistory" : {
           "type" : "array",
           "items" : {
             "$ref" : "ActOfManagmentHistory"
           }
         },
+        "actofmanagmentid" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "checkid" : {
           "type" : "string"
+        },
+        "accountingOperatorId" : {
+          "type" : "string"
+        },
+        "lettercheckid" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "firstName" : {
           "type" : "string"

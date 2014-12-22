@@ -433,11 +433,11 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "needChequeId" : {
-          "type" : "boolean"
-        },
         "creationUserId" : {
           "type" : "string"
+        },
+        "needChequeId" : {
+          "type" : "boolean"
         },
         "categoryId" : {
           "type" : "string"
@@ -525,6 +525,9 @@
           "type" : "integer",
           "format" : "int64"
         },
+        "validationuserId" : {
+          "type" : "string"
+        },
         "categoryId" : {
           "type" : "string"
         },
@@ -532,9 +535,6 @@
           "type" : "string"
         },
         "modeId" : {
-          "type" : "string"
-        },
-        "validationuserId" : {
           "type" : "string"
         },
         "comment" : {
@@ -566,11 +566,11 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "needChequeId" : {
-          "type" : "boolean"
-        },
         "creationUserId" : {
           "type" : "string"
+        },
+        "needChequeId" : {
+          "type" : "boolean"
         }
       }
     },

@@ -256,7 +256,7 @@
     "ConfigurationWithProductsEquipments" : {
       "id" : "ConfigurationWithProductsEquipments",
       "description" : "",
-      "required" : [ "ispId", "sortOrder", "isIspId", "configCategory", "configCategoryLabel" ],
+      "required" : [ "ispId", "sortOrder", "configCategory", "configCategoryLabel", "isIspId" ],
       "extends" : "",
       "properties" : {
         "ispId" : {
@@ -274,10 +274,6 @@
           "format" : "int32",
           "description" : "Colonne de tri"
         },
-        "isIspId" : {
-          "type" : "string",
-          "description" : "Indicateur d'éligibilité auprès d'un FAI"
-        },
         "configCategory" : {
           "type" : "string",
           "description" : "Code catégorie permettant de filtrer les configurations matérielles"
@@ -285,6 +281,10 @@
         "configCategoryLabel" : {
           "type" : "string",
           "description" : "Libellé catégorie permettant de filtrer les configurations matérielles"
+        },
+        "isIspId" : {
+          "type" : "string",
+          "description" : "Indicateur d'éligibilité auprès d'un FAI"
         },
         "equipmentConfig" : {
           "type" : "string"
@@ -552,16 +552,16 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "equipmentConfigLabel" : {
+        "configCategory" : {
+          "type" : "string"
+        },
+        "configCategoryLabel" : {
           "type" : "string"
         },
         "isIspId" : {
           "type" : "string"
         },
-        "configCategory" : {
-          "type" : "string"
-        },
-        "configCategoryLabel" : {
+        "equipmentConfigLabel" : {
           "type" : "string"
         }
       }
@@ -668,10 +668,10 @@
         "deposit" : {
           "type" : "boolean"
         },
-        "accessorie" : {
+        "rental" : {
           "type" : "boolean"
         },
-        "rental" : {
+        "accessorie" : {
           "type" : "boolean"
         }
       }

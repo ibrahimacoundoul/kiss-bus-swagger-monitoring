@@ -270,8 +270,9 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "rejectLabel" : {
-          "type" : "string"
+        "directDebitId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "rejectCode" : {
           "type" : "string"
@@ -279,11 +280,10 @@
         "isIntentional" : {
           "type" : "boolean"
         },
-        "directDebitId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "directDebitTypeLabel" : {
+          "type" : "string"
+        },
+        "rejectLabel" : {
           "type" : "string"
         },
         "rejectDate" : {

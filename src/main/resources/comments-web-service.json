@@ -333,11 +333,11 @@
         "freeText" : {
           "type" : "string"
         },
-        "updateOnLinkedContract" : {
-          "type" : "boolean"
-        },
         "actOfManagemnetId" : {
           "type" : "string"
+        },
+        "updateOnLinkedContract" : {
+          "type" : "boolean"
         }
       }
     },

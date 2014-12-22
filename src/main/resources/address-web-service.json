@@ -609,17 +609,13 @@
     "AddressInvalidateIn" : {
       "id" : "AddressInvalidateIn",
       "description" : "",
-      "required" : [ "personId", "invalidityReasonId", "addressTypeId", "pndcategory" ],
+      "required" : [ "personId", "addressTypeId", "pndcategory", "invalidityReasonId" ],
       "extends" : "",
       "properties" : {
         "personId" : {
           "type" : "integer",
           "format" : "int64",
           "description" : "Id de l’abonné"
-        },
-        "invalidityReasonId" : {
-          "type" : "string",
-          "description" : "raison d'invalidation"
         },
         "addressTypeId" : {
           "type" : "string",
@@ -628,6 +624,10 @@
         "pndcategory" : {
           "type" : "string",
           "description" : "Code de la catégorie de NPAI"
+        },
+        "invalidityReasonId" : {
+          "type" : "string",
+          "description" : "raison d'invalidation"
         }
       }
     },

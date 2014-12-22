@@ -356,13 +356,13 @@
         "lastName" : {
           "type" : "string"
         },
+        "companyName" : {
+          "type" : "string"
+        },
         "companyId" : {
           "type" : "string"
         },
         "civility" : {
-          "type" : "string"
-        },
-        "companyName" : {
           "type" : "string"
         }
       }
@@ -639,11 +639,11 @@
           "type" : "integer",
           "format" : "int64"
         },
-        "shipmentFees" : {
+        "availabilityFees" : {
           "type" : "number",
           "format" : "double"
         },
-        "availabilityFees" : {
+        "shipmentFees" : {
           "type" : "number",
           "format" : "double"
         },

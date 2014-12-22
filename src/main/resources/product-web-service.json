@@ -1579,10 +1579,10 @@
             "type" : "string"
           }
         },
-        "fifthCategory" : {
+        "isGenericProductBillable" : {
           "type" : "boolean"
         },
-        "isGenericProductBillable" : {
+        "fifthCategory" : {
           "type" : "boolean"
         },
         "includedProducts" : {
@@ -2062,10 +2062,10 @@
         "productType" : {
           "type" : "string"
         },
-        "productCategory" : {
+        "themeId" : {
           "type" : "string"
         },
-        "themeId" : {
+        "productCategory" : {
           "type" : "string"
         }
       }
@@ -2173,10 +2173,10 @@
         "productType" : {
           "type" : "string"
         },
-        "productCategory" : {
+        "themeId" : {
           "type" : "string"
         },
-        "themeId" : {
+        "productCategory" : {
           "type" : "string"
         },
         "technicalIds" : {
@@ -2240,13 +2240,13 @@
         "countryId" : {
           "type" : "string"
         },
+        "crossOperators" : {
+          "type" : "boolean"
+        },
         "postalcode" : {
           "type" : "string"
         },
         "linkedContract" : {
-          "type" : "boolean"
-        },
-        "crossOperators" : {
           "type" : "boolean"
         }
       }
@@ -2410,10 +2410,10 @@
         "productType" : {
           "type" : "string"
         },
-        "productCategory" : {
+        "themeId" : {
           "type" : "string"
         },
-        "themeId" : {
+        "productCategory" : {
           "type" : "string"
         }
       }

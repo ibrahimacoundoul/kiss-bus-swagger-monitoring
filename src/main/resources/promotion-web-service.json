@@ -540,9 +540,6 @@
         "internalPromotionId" : {
           "type" : "string"
         },
-        "subType" : {
-          "type" : "string"
-        },
         "maxCancelationDateAllowed" : {
           "type" : "string"
         },
@@ -551,6 +548,9 @@
         },
         "removable" : {
           "type" : "boolean"
+        },
+        "subType" : {
+          "type" : "string"
         },
         "type" : {
           "type" : "string"
@@ -609,13 +609,13 @@
           "type" : "string",
           "description" : "message d'erreur de la validation du coupon"
         },
-        "businessToBusiness" : {
-          "type" : "boolean",
-          "description" : "indicateur qui permet de savoir s'il s'agit d'un coupon b2b"
-        },
         "infosSubscription" : {
           "$ref" : "InfosSubscriptionContextAndArticles",
           "description" : "informations de souscriptions dans le cas d'un coupon b2b"
+        },
+        "businessToBusiness" : {
+          "type" : "boolean",
+          "description" : "indicateur qui permet de savoir s'il s'agit d'un coupon b2b"
         },
         "description" : {
           "type" : "string",

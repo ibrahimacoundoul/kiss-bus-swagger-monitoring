@@ -1256,11 +1256,11 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "shipmentFees" : {
+        "availabilityFees" : {
           "type" : "number",
           "format" : "double"
         },
-        "availabilityFees" : {
+        "shipmentFees" : {
           "type" : "number",
           "format" : "double"
         },
@@ -1324,15 +1324,15 @@
         "logisticReason" : {
           "type" : "string"
         },
+        "isDisplayable" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
         "reasonLabel" : {
           "type" : "string"
         },
         "logisticReasonLabel" : {
           "type" : "string"
-        },
-        "isDisplayable" : {
-          "type" : "integer",
-          "format" : "int32"
         },
         "sortOrder" : {
           "type" : "integer",

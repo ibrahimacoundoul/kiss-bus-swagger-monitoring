@@ -393,6 +393,15 @@
         "accountingPieceLabel" : {
           "type" : "string"
         },
+        "creationUserId" : {
+          "type" : "string"
+        },
+        "statusId" : {
+          "type" : "string"
+        },
+        "accountingPieceId" : {
+          "type" : "string"
+        },
         "validationUser" : {
           "type" : "string"
         },
@@ -401,15 +410,6 @@
           "items" : {
             "$ref" : "ManualAccountingEntry"
           }
-        },
-        "accountingPieceId" : {
-          "type" : "string"
-        },
-        "creationUserId" : {
-          "type" : "string"
-        },
-        "statusId" : {
-          "type" : "string"
         },
         "comment" : {
           "type" : "string"

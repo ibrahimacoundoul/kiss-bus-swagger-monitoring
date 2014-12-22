@@ -201,13 +201,13 @@
         "lastName" : {
           "type" : "string"
         },
+        "companyName" : {
+          "type" : "string"
+        },
         "companyId" : {
           "type" : "string"
         },
         "civility" : {
-          "type" : "string"
-        },
-        "companyName" : {
           "type" : "string"
         }
       }

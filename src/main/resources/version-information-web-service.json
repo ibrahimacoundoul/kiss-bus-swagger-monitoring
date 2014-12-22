@@ -46,10 +46,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "buildNumber" : {
+        "buildDate" : {
           "type" : "string"
         },
-        "buildDate" : {
+        "buildNumber" : {
           "type" : "string"
         },
         "version" : {
@@ -62,11 +62,11 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "databaseInformation" : {
-          "$ref" : "DatabaseInformation"
-        },
         "applicationInformation" : {
           "$ref" : "ApplicationInformation"
+        },
+        "databaseInformation" : {
+          "$ref" : "DatabaseInformation"
         }
       }
     },
@@ -75,10 +75,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "updatedDate" : {
+        "sid" : {
           "type" : "string"
         },
-        "sid" : {
+        "updatedDate" : {
           "type" : "string"
         },
         "version" : {
