@@ -432,7 +432,7 @@
         "name" : "catalogs",
         "description" : "liste des nom de catalogues",
         "defaultValue" : "",
-        "required" : true,
+        "required" : false,
         "type" : "List",
         "paramType" : "query",
         "allowMultiple" : false
@@ -972,7 +972,7 @@
         "name" : "distributorId",
         "description" : "Numéro de distributeur",
         "defaultValue" : "",
-        "required" : false,
+        "required" : true,
         "type" : "string",
         "paramType" : "query",
         "allowMultiple" : false
@@ -1237,7 +1237,7 @@
         "name" : "distributorId",
         "description" : "Numéro de distributeur",
         "defaultValue" : "",
-        "required" : false,
+        "required" : true,
         "type" : "string",
         "paramType" : "query",
         "allowMultiple" : false
@@ -1317,7 +1317,7 @@
         "name" : "catalogs",
         "description" : "liste des nom de catalogues",
         "defaultValue" : "",
-        "required" : true,
+        "required" : false,
         "type" : "List",
         "paramType" : "query",
         "allowMultiple" : false
