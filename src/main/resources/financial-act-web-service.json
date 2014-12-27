@@ -350,12 +350,12 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "checkId" : {
+          "type" : "string"
+        },
         "actOfManagementId" : {
           "type" : "integer",
           "format" : "int64"
-        },
-        "checkId" : {
-          "type" : "string"
         }
       }
     },
@@ -411,6 +411,18 @@
           "type" : "integer",
           "format" : "int64"
         },
+        "categoryId" : {
+          "type" : "string"
+        },
+        "statusId" : {
+          "type" : "string"
+        },
+        "creationUserId" : {
+          "type" : "string"
+        },
+        "needChequeId" : {
+          "type" : "boolean"
+        },
         "amount" : {
           "type" : "number",
           "format" : "double"
@@ -432,18 +444,6 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "creationUserId" : {
-          "type" : "string"
-        },
-        "needChequeId" : {
-          "type" : "boolean"
-        },
-        "categoryId" : {
-          "type" : "string"
-        },
-        "statusId" : {
-          "type" : "string"
         }
       }
     },
@@ -509,6 +509,18 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "categoryId" : {
+          "type" : "string"
+        },
+        "statusId" : {
+          "type" : "string"
+        },
+        "modeId" : {
+          "type" : "string"
+        },
+        "validationuserId" : {
+          "type" : "string"
+        },
         "sendDate" : {
           "type" : "integer",
           "format" : "int64"
@@ -525,24 +537,18 @@
           "type" : "integer",
           "format" : "int64"
         },
-        "validationuserId" : {
-          "type" : "string"
-        },
-        "categoryId" : {
-          "type" : "string"
-        },
-        "statusId" : {
-          "type" : "string"
-        },
-        "modeId" : {
-          "type" : "string"
-        },
         "comment" : {
           "type" : "string"
         },
         "creationDate" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "creationUserId" : {
+          "type" : "string"
+        },
+        "needChequeId" : {
+          "type" : "boolean"
         },
         "amount" : {
           "type" : "number",
@@ -565,12 +571,6 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "creationUserId" : {
-          "type" : "string"
-        },
-        "needChequeId" : {
-          "type" : "boolean"
         }
       }
     },
@@ -579,6 +579,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "startDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
@@ -590,10 +594,6 @@
         "contractId" : {
           "type" : "integer",
           "format" : "int32"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
         },
         "motives" : {
           "type" : "array",

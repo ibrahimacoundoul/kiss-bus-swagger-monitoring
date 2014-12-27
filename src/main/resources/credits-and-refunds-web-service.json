@@ -807,13 +807,13 @@
         "creationDate" : {
           "type" : "string"
         },
+        "statusId" : {
+          "type" : "string"
+        },
         "motiveId" : {
           "type" : "string"
         },
         "creationUser" : {
-          "type" : "string"
-        },
-        "statusId" : {
           "type" : "string"
         },
         "actOfManagmentId" : {
@@ -882,13 +882,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "motiveId" : {
           "type" : "string"
@@ -947,14 +947,14 @@
           "type" : "number",
           "format" : "double"
         },
-        "motiveLabel" : {
-          "type" : "string"
-        },
         "amounts" : {
           "type" : "array",
           "items" : {
             "type" : "double"
           }
+        },
+        "motiveLabel" : {
+          "type" : "string"
         }
       }
     },
@@ -1047,6 +1047,9 @@
           "type" : "integer",
           "format" : "int64"
         },
+        "creationUserId" : {
+          "type" : "string"
+        },
         "amount" : {
           "type" : "number",
           "format" : "double"
@@ -1066,16 +1069,13 @@
           "type" : "integer",
           "format" : "int32"
         },
+        "opposeMotiveId" : {
+          "type" : "string"
+        },
         "chequeId" : {
           "type" : "string"
         },
-        "creationUserId" : {
-          "type" : "string"
-        },
         "initMotiveId" : {
-          "type" : "string"
-        },
-        "opposeMotiveId" : {
           "type" : "string"
         }
       }
@@ -1183,25 +1183,25 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "lettercheckid" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "actofmanagmentid" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "accountingOperatorId" : {
+          "type" : "string"
+        },
         "actOfManagmentHistory" : {
           "type" : "array",
           "items" : {
             "$ref" : "ActOfManagmentHistory"
           }
         },
-        "actofmanagmentid" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "checkid" : {
           "type" : "string"
-        },
-        "accountingOperatorId" : {
-          "type" : "string"
-        },
-        "lettercheckid" : {
-          "type" : "integer",
-          "format" : "int64"
         },
         "firstName" : {
           "type" : "string"
@@ -1290,13 +1290,13 @@
           "type" : "number",
           "format" : "double"
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "motiveId" : {
           "type" : "string"

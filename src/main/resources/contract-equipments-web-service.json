@@ -1008,13 +1008,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         }
       }
     },
@@ -1043,13 +1043,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "transactionId" : {
           "type" : "string"
@@ -1061,13 +1061,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "shipmentFees" : {
           "type" : "number",
@@ -1117,13 +1117,13 @@
             "$ref" : "Equipment"
           }
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "transactionId" : {
           "type" : "string"
@@ -1144,13 +1144,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "transactionId" : {
           "type" : "string"
@@ -1216,13 +1216,13 @@
             "$ref" : "EquipmentChangeInfo"
           }
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "transactionId" : {
           "type" : "string"
@@ -1324,9 +1324,9 @@
         "logisticReason" : {
           "type" : "string"
         },
-        "isDisplayable" : {
+        "sortOrder" : {
           "type" : "integer",
-          "format" : "int32"
+          "format" : "int64"
         },
         "reasonLabel" : {
           "type" : "string"
@@ -1334,9 +1334,9 @@
         "logisticReasonLabel" : {
           "type" : "string"
         },
-        "sortOrder" : {
+        "isDisplayable" : {
           "type" : "integer",
-          "format" : "int64"
+          "format" : "int32"
         }
       }
     },
@@ -1374,13 +1374,13 @@
             "$ref" : "Equipment"
           }
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         }
       }
     },
@@ -1467,14 +1467,14 @@
         "equipmentId" : {
           "type" : "string"
         },
-        "referent" : {
-          "type" : "boolean"
-        },
         "equipmentCategory" : {
           "type" : "string"
         },
         "equipmentTypeLabel" : {
           "type" : "string"
+        },
+        "referent" : {
+          "type" : "boolean"
         }
       }
     },
@@ -1489,13 +1489,13 @@
             "$ref" : "EquipmentChangeInfo"
           }
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "transactionId" : {
           "type" : "string"
@@ -1549,13 +1549,13 @@
             "$ref" : "Equipment"
           }
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "equipmentConfig" : {
           "type" : "string"
@@ -1571,18 +1571,18 @@
     "ConfigurationFees" : {
       "id" : "ConfigurationFees",
       "description" : "",
-      "required" : [ "contractId", "personId", "equipmentConfig", "affectationType", "skipAvailabilityFees" ],
+      "required" : [ "personId", "contractId", "equipmentConfig", "affectationType", "skipAvailabilityFees" ],
       "extends" : "",
       "properties" : {
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "N° du contrat de l'abonné"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64",
           "description" : "Id de l'abonné"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "N° du contrat de l'abonné"
         },
         "shipmentFees" : {
           "type" : "number",
@@ -1638,13 +1638,13 @@
             "$ref" : "Equipment"
           }
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "reasonId" : {
           "type" : "string"
@@ -1691,13 +1691,13 @@
             "$ref" : "Equipment"
           }
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         }
       }
     },

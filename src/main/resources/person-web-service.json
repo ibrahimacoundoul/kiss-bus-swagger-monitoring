@@ -903,10 +903,10 @@
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         }
       }
@@ -918,12 +918,6 @@
       "properties" : {
         "startDate" : {
           "type" : "string"
-        },
-        "endDate" : {
-          "type" : "string"
-        },
-        "forcingIndicator" : {
-          "type" : "boolean"
         },
         "personId" : {
           "type" : "integer",
@@ -937,6 +931,9 @@
           "format" : "int32"
         },
         "countryId" : {
+          "type" : "string"
+        },
+        "endDate" : {
           "type" : "string"
         },
         "city" : {
@@ -957,12 +954,15 @@
         "street4" : {
           "type" : "string"
         },
-        "undeliverabilityReason" : {
-          "type" : "string"
+        "forcingIndicator" : {
+          "type" : "boolean"
         },
         "addressId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "undeliverabilityReason" : {
+          "type" : "string"
         },
         "valid" : {
           "type" : "boolean"
@@ -974,13 +974,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "identityType" : {
-          "type" : "string"
-        },
         "identityNumber" : {
           "type" : "string"
         },
         "validityDate" : {
+          "type" : "string"
+        },
+        "identityType" : {
           "type" : "string"
         }
       }
@@ -1007,6 +1007,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "emailId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "startDate" : {
           "type" : "string"
         },
@@ -1021,10 +1025,6 @@
         },
         "invalidityReason" : {
           "type" : "string"
-        },
-        "emailId" : {
-          "type" : "integer",
-          "format" : "int64"
         }
       }
     },
@@ -1116,9 +1116,6 @@
         "updateUser" : {
           "type" : "string"
         },
-        "homeId" : {
-          "type" : "string"
-        },
         "identityDocuments" : {
           "$ref" : "IdentityDocument"
         },
@@ -1133,6 +1130,9 @@
           "items" : {
             "$ref" : "Address"
           }
+        },
+        "homeId" : {
+          "type" : "string"
         }
       }
     },
@@ -1172,10 +1172,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "emailType" : {
+        "email" : {
           "type" : "string"
         },
-        "email" : {
+        "emailType" : {
           "type" : "string"
         }
       }

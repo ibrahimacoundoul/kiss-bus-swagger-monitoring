@@ -346,7 +346,7 @@
         "name" : "saleDevice",
         "description" : "Canal via lequel l'opération est effectuée ",
         "defaultValue" : "",
-        "required" : false,
+        "required" : true,
         "type" : "string",
         "paramType" : "query",
         "allowMultiple" : false
@@ -786,10 +786,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "phoneType" : {
+        "phoneNumber" : {
           "type" : "string"
         },
-        "phoneNumber" : {
+        "phoneType" : {
           "type" : "string"
         }
       }
@@ -862,6 +862,15 @@
         "creditCard" : {
           "$ref" : "CreditCardLight"
         },
+        "directDebitDate" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Jour de prélèvement"
+        },
+        "thirdPayorId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "methodOfPayment" : {
           "type" : "string"
         },
@@ -869,11 +878,6 @@
           "type" : "integer",
           "format" : "int32",
           "description" : "Le contrat associé au moyen de paiement"
-        },
-        "directDebitDate" : {
-          "type" : "integer",
-          "format" : "int32",
-          "description" : "Jour de prélèvement"
         },
         "createdDate" : {
           "type" : "string",
@@ -903,12 +907,12 @@
         "iban" : {
           "type" : "string"
         },
-        "bic" : {
-          "type" : "string"
-        },
         "directDebitDate" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "bic" : {
+          "type" : "string"
         }
       }
     },
@@ -917,6 +921,9 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "recurrentCB" : {
+          "type" : "boolean"
+        },
         "amount" : {
           "type" : "number",
           "format" : "double"
@@ -930,9 +937,6 @@
         },
         "creditCard" : {
           "$ref" : "CreditCardWithOwner"
-        },
-        "recurrentCB" : {
-          "type" : "boolean"
         }
       }
     },
@@ -1068,12 +1072,12 @@
         "iban" : {
           "type" : "string"
         },
-        "bic" : {
-          "type" : "string"
-        },
         "directDebitDate" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "bic" : {
+          "type" : "string"
         },
         "thirdPayorId" : {
           "type" : "integer",
@@ -1216,10 +1220,10 @@
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         }
       }
@@ -1296,15 +1300,15 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
         "authorizations" : {
           "type" : "array",
           "items" : {
             "$ref" : "InitCreditCardPaymentAuthorizationOut"
           }
+        },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     },
@@ -1319,12 +1323,6 @@
             "$ref" : "PhoneCommon"
           }
         },
-        "orderId" : {
-          "type" : "string"
-        },
-        "person" : {
-          "$ref" : "PersonProspect"
-        },
         "email" : {
           "type" : "string"
         },
@@ -1333,6 +1331,12 @@
         },
         "thirdPayor" : {
           "type" : "boolean"
+        },
+        "orderId" : {
+          "type" : "string"
+        },
+        "person" : {
+          "$ref" : "PersonProspect"
         },
         "address" : {
           "$ref" : "AddressCommon"
@@ -1350,12 +1354,12 @@
             "$ref" : "InitCreditCardPaymentAuthorizationIn"
           }
         },
-        "postalCode" : {
-          "type" : "string"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "postalCode" : {
+          "type" : "string"
         },
         "countryId" : {
           "type" : "string"

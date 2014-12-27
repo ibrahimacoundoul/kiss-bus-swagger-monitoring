@@ -290,9 +290,14 @@
     "ActOfManagementRequest" : {
       "id" : "ActOfManagementRequest",
       "description" : "",
-      "required" : [ "startDate", "personId" ],
+      "required" : [ "personId", "startDate" ],
       "extends" : "",
       "properties" : {
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "ID de l'abonné concerné"
+        },
         "startDate" : {
           "$ref" : "date-time",
           "description" : "Indique le début d’intervalle de sélection au format yyyymmdd"
@@ -305,11 +310,6 @@
           "type" : "integer",
           "format" : "int32",
           "description" : "ID du contrat"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "ID de l'abonné concerné"
         },
         "actOfManagementFamily" : {
           "type" : "string",
@@ -356,19 +356,19 @@
         "contactId" : {
           "type" : "string"
         },
-        "cancellationUser" : {
-          "type" : "string"
+        "changes" : {
+          "$ref" : "ActOfManagementDetail"
         },
         "actOfManagementFamilyType" : {
           "type" : "string"
         },
-        "changes" : {
-          "$ref" : "ActOfManagementDetail"
-        },
-        "salesman" : {
+        "actOfManagementType" : {
           "type" : "string"
         },
-        "actOfManagementType" : {
+        "cancellationUser" : {
+          "type" : "string"
+        },
+        "salesman" : {
           "type" : "string"
         },
         "distributorId" : {
@@ -379,7 +379,7 @@
     "ActOfManagementSearch" : {
       "id" : "ActOfManagementSearch",
       "description" : "",
-      "required" : [ "creationDate", "mediaType", "actOfManagementId", "cancellationDate", "personId", "contractId", "renewalSequence", "creationUser", "saleDevice", "contactId", "cancellationUser", "salesman", "actOfManagementType", "distributorId" ],
+      "required" : [ "creationDate", "mediaType", "actOfManagementId", "cancellationDate", "personId", "contractId", "renewalSequence", "creationUser", "saleDevice", "contactId", "actOfManagementType", "cancellationUser", "salesman", "distributorId" ],
       "extends" : "",
       "properties" : {
         "creationDate" : {
@@ -428,23 +428,23 @@
           "type" : "string",
           "description" : "Identifiant du contact"
         },
-        "cancellationUser" : {
-          "type" : "string",
-          "description" : "Utilisateur ayant annulé le mouvement"
+        "changes" : {
+          "$ref" : "ActOfManagementDetail"
         },
         "actOfManagementFamilyType" : {
           "type" : "string"
         },
-        "changes" : {
-          "$ref" : "ActOfManagementDetail"
+        "actOfManagementType" : {
+          "type" : "string",
+          "description" : "Typologie du mouvement"
+        },
+        "cancellationUser" : {
+          "type" : "string",
+          "description" : "Utilisateur ayant annulé le mouvement"
         },
         "salesman" : {
           "type" : "string",
           "description" : "Id du vendeur lié au mouvement"
-        },
-        "actOfManagementType" : {
-          "type" : "string",
-          "description" : "Typologie du mouvement"
         },
         "distributorId" : {
           "type" : "string",
@@ -509,10 +509,7 @@
         "contactId" : {
           "type" : "string"
         },
-        "cancellationUser" : {
-          "type" : "string"
-        },
-        "salesMan" : {
+        "actOfManagementCode" : {
           "type" : "string"
         },
         "listOfChanges" : {
@@ -521,10 +518,13 @@
             "$ref" : "ActOfManagementChange"
           }
         },
-        "distributorId" : {
+        "salesMan" : {
           "type" : "string"
         },
-        "actOfManagementCode" : {
+        "cancellationUser" : {
+          "type" : "string"
+        },
+        "distributorId" : {
           "type" : "string"
         }
       }

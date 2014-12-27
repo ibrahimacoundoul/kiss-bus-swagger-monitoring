@@ -173,10 +173,10 @@
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         }
       }
@@ -186,10 +186,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "phoneType" : {
+        "phoneNumber" : {
           "type" : "string"
         },
-        "phoneNumber" : {
+        "phoneType" : {
           "type" : "string"
         }
       }
@@ -199,12 +199,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "orderId" : {
-          "type" : "string"
-        },
-        "person" : {
-          "$ref" : "PersonProspect"
-        },
         "email" : {
           "type" : "string"
         },
@@ -213,6 +207,12 @@
         },
         "thirdPayor" : {
           "type" : "boolean"
+        },
+        "orderId" : {
+          "type" : "string"
+        },
+        "person" : {
+          "$ref" : "PersonProspect"
         },
         "phones" : {
           "type" : "array",
@@ -233,12 +233,12 @@
         "iban" : {
           "type" : "string"
         },
-        "bic" : {
-          "type" : "string"
-        },
         "directDebitDate" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "bic" : {
+          "type" : "string"
         }
       }
     },
@@ -247,9 +247,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "person" : {
-          "$ref" : "PersonToUpdate"
-        },
         "email" : {
           "type" : "string"
         },
@@ -258,6 +255,9 @@
         },
         "thirdPayor" : {
           "type" : "boolean"
+        },
+        "person" : {
+          "$ref" : "PersonToUpdate"
         },
         "phones" : {
           "type" : "array",
@@ -307,10 +307,10 @@
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         }
       }

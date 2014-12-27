@@ -76,10 +76,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "phoneType" : {
+        "phoneNumber" : {
           "type" : "string"
         },
-        "phoneNumber" : {
+        "phoneType" : {
           "type" : "string"
         }
       }
@@ -204,10 +204,10 @@
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         }
       }
@@ -250,6 +250,12 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "email" : {
+          "type" : "string"
+        },
+        "payment" : {
+          "$ref" : "PaymentMeans"
+        },
         "commercialOperators" : {
           "type" : "array",
           "uniqueItems" : true,
@@ -265,12 +271,6 @@
           "items" : {
             "$ref" : "Equipment"
           }
-        },
-        "email" : {
-          "type" : "string"
-        },
-        "payment" : {
-          "$ref" : "PaymentMeans"
         },
         "sponsorId" : {
           "type" : "integer",

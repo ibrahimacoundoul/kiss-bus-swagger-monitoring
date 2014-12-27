@@ -76,6 +76,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
         "postalCode" : {
           "type" : "string"
         },
@@ -86,10 +90,6 @@
         "endDate" : {
           "type" : "string",
           "description" : "Format date attendu yyyymmdd"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64"
         },
         "promotions" : {
           "type" : "array",
@@ -199,12 +199,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "detail" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "PaymentPlanResultDetail"
-          }
-        },
         "commercialOperator" : {
           "type" : "string"
         },
@@ -213,6 +207,12 @@
         },
         "rawprice" : {
           "type" : "string"
+        },
+        "detail" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "PaymentPlanResultDetail"
+          }
         },
         "month" : {
           "type" : "string"

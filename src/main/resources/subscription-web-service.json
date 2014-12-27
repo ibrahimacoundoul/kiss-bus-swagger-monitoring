@@ -206,17 +206,17 @@
             "$ref" : "ContractToSubscribe"
           }
         },
-        "orderId" : {
-          "type" : "string"
-        },
-        "person" : {
-          "$ref" : "PersonToSubscribe"
-        },
         "email" : {
           "type" : "string"
         },
         "payment" : {
           "$ref" : "PaymentToSubscribe"
+        },
+        "orderId" : {
+          "type" : "string"
+        },
+        "person" : {
+          "$ref" : "PersonToSubscribe"
         },
         "shipmentFees" : {
           "type" : "number",
@@ -250,10 +250,10 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "phoneType" : {
+        "phoneNumber" : {
           "type" : "string"
         },
-        "phoneNumber" : {
+        "phoneType" : {
           "type" : "string"
         }
       }
@@ -359,10 +359,10 @@
         "companyName" : {
           "type" : "string"
         },
-        "companyId" : {
+        "civility" : {
           "type" : "string"
         },
-        "civility" : {
+        "companyId" : {
           "type" : "string"
         }
       }
@@ -460,17 +460,17 @@
             "$ref" : "ContractToValidateSubscriptionIn"
           }
         },
-        "orderId" : {
-          "type" : "string"
-        },
-        "person" : {
-          "$ref" : "PersonToSubscribe"
-        },
         "email" : {
           "type" : "string"
         },
         "payment" : {
           "$ref" : "PaymentToSubscribe"
+        },
+        "orderId" : {
+          "type" : "string"
+        },
+        "person" : {
+          "$ref" : "PersonToSubscribe"
         },
         "shipmentFees" : {
           "type" : "number",
@@ -574,6 +574,9 @@
         "action" : {
           "type" : "string"
         },
+        "freeMethodOfPaymentReason" : {
+          "type" : "string"
+        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -615,9 +618,6 @@
         "sponsorId" : {
           "type" : "integer",
           "format" : "int64"
-        },
-        "freeMethodOfPaymentReason" : {
-          "type" : "string"
         }
       }
     },
@@ -664,6 +664,9 @@
         "action" : {
           "type" : "string"
         },
+        "freeMethodOfPaymentReason" : {
+          "type" : "string"
+        },
         "broadcastVectorId" : {
           "type" : "string"
         },
@@ -705,9 +708,6 @@
         "sponsorId" : {
           "type" : "integer",
           "format" : "int64"
-        },
-        "freeMethodOfPaymentReason" : {
-          "type" : "string"
         }
       }
     }

@@ -256,7 +256,7 @@
     "ConfigurationWithProductsEquipments" : {
       "id" : "ConfigurationWithProductsEquipments",
       "description" : "",
-      "required" : [ "ispId", "sortOrder", "configCategory", "configCategoryLabel", "isIspId" ],
+      "required" : [ "ispId", "isIspId", "sortOrder", "configCategory", "configCategoryLabel" ],
       "extends" : "",
       "properties" : {
         "ispId" : {
@@ -268,6 +268,10 @@
           "items" : {
             "$ref" : "EquipmentTypeConfig"
           }
+        },
+        "isIspId" : {
+          "type" : "string",
+          "description" : "Indicateur d'éligibilité auprès d'un FAI"
         },
         "sortOrder" : {
           "type" : "integer",
@@ -281,10 +285,6 @@
         "configCategoryLabel" : {
           "type" : "string",
           "description" : "Libellé catégorie permettant de filtrer les configurations matérielles"
-        },
-        "isIspId" : {
-          "type" : "string",
-          "description" : "Indicateur d'éligibilité auprès d'un FAI"
         },
         "equipmentConfig" : {
           "type" : "string"
@@ -414,6 +414,11 @@
           "type" : "string",
           "description" : "Identifiant de l'opérateur "
         },
+        "personId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Identifiant de l'abonné"
+        },
         "postalCode" : {
           "type" : "string",
           "description" : "Code postal de l'abonné permettant de déterminé la région"
@@ -438,11 +443,6 @@
           "type" : "integer",
           "format" : "int32",
           "description" : "Numéro de contrat"
-        },
-        "personId" : {
-          "type" : "integer",
-          "format" : "int64",
-          "description" : "Identifiant de l'abonné"
         },
         "reasonId" : {
           "type" : "string",
@@ -548,6 +548,12 @@
           "type" : "number",
           "format" : "double"
         },
+        "isIspId" : {
+          "type" : "string"
+        },
+        "equipmentConfigLabel" : {
+          "type" : "string"
+        },
         "sortOrder" : {
           "type" : "integer",
           "format" : "int32"
@@ -556,12 +562,6 @@
           "type" : "string"
         },
         "configCategoryLabel" : {
-          "type" : "string"
-        },
-        "isIspId" : {
-          "type" : "string"
-        },
-        "equipmentConfigLabel" : {
           "type" : "string"
         }
       }
@@ -668,10 +668,10 @@
         "deposit" : {
           "type" : "boolean"
         },
-        "rental" : {
+        "accessorie" : {
           "type" : "boolean"
         },
-        "accessorie" : {
+        "rental" : {
           "type" : "boolean"
         }
       }

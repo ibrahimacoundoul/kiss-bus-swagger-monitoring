@@ -273,13 +273,13 @@
         "commentType" : {
           "type" : "string"
         },
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "creationUser" : {
           "type" : "string"
@@ -333,11 +333,11 @@
         "freeText" : {
           "type" : "string"
         },
-        "actOfManagemnetId" : {
-          "type" : "string"
-        },
         "updateOnLinkedContract" : {
           "type" : "boolean"
+        },
+        "actOfManagemnetId" : {
+          "type" : "string"
         }
       }
     },

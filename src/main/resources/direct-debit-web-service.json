@@ -250,12 +250,6 @@
         "bic" : {
           "type" : "string"
         },
-        "detail" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "ProductDetail"
-          }
-        },
         "amount" : {
           "type" : "number",
           "format" : "double"
@@ -270,15 +264,18 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "directDebitId" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "rejectCode" : {
-          "type" : "string"
+        "detail" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ProductDetail"
+          }
         },
         "isIntentional" : {
           "type" : "boolean"
+        },
+        "directDebitId" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "directDebitTypeLabel" : {
           "type" : "string"
@@ -291,6 +288,9 @@
         },
         "isRepresentable" : {
           "type" : "boolean"
+        },
+        "rejectCode" : {
+          "type" : "string"
         },
         "month" : {
           "type" : "string"
@@ -348,12 +348,12 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "productId" : {
-          "type" : "string"
-        },
         "amount" : {
           "type" : "number",
           "format" : "double"
+        },
+        "productId" : {
+          "type" : "string"
         },
         "productLabel" : {
           "type" : "string"
@@ -369,12 +369,12 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "productId" : {
-          "type" : "string"
-        },
         "amount" : {
           "type" : "number",
           "format" : "double"
+        },
+        "productId" : {
+          "type" : "string"
         },
         "productLabel" : {
           "type" : "string"
@@ -389,12 +389,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "detail" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "ForecastedDirectDebitDetailOut"
-          }
-        },
         "amount" : {
           "type" : "number",
           "format" : "double"
@@ -404,6 +398,12 @@
         },
         "directDebitTypeId" : {
           "type" : "string"
+        },
+        "detail" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "ForecastedDirectDebitDetailOut"
+          }
         },
         "directDebitTypeLabel" : {
           "type" : "string"

@@ -983,11 +983,11 @@
         "genericProduct" : {
           "type" : "boolean"
         },
-        "productCategory" : {
-          "type" : "string"
-        },
         "technicalOffer" : {
           "type" : "boolean"
+        },
+        "productCategory" : {
+          "type" : "string"
         },
         "label" : {
           "type" : "string"
@@ -1111,13 +1111,9 @@
     "PNDCategoriesCodeTable" : {
       "id" : "PNDCategoriesCodeTable",
       "description" : "",
-      "required" : [ "administration", "numberOfPND", "marketing" ],
+      "required" : [ "numberOfPND", "marketing", "administration" ],
       "extends" : "",
       "properties" : {
-        "administration" : {
-          "type" : "boolean",
-          "description" : "Si '1', indique que cette catégorie est de type gestion"
-        },
         "numberOfPND" : {
           "type" : "integer",
           "format" : "int32",
@@ -1126,6 +1122,10 @@
         "marketing" : {
           "type" : "boolean",
           "description" : "Si '1', indique que cette catégorie est de type marketing"
+        },
+        "administration" : {
+          "type" : "boolean",
+          "description" : "Si '1', indique que cette catégorie est de type gestion"
         },
         "label" : {
           "type" : "string"
@@ -1227,15 +1227,15 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "rejetCode" : {
-          "type" : "string"
-        },
         "rejetLabel" : {
           "type" : "string"
         },
         "rejetId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "rejetCode" : {
+          "type" : "string"
         }
       }
     },
@@ -1356,6 +1356,12 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "isPayment" : {
+          "type" : "boolean"
+        },
+        "isScratchCard" : {
+          "type" : "boolean"
+        },
         "isMultiple" : {
           "type" : "boolean"
         },
@@ -1368,9 +1374,6 @@
         "isBankTransfer" : {
           "type" : "boolean"
         },
-        "isPayment" : {
-          "type" : "boolean"
-        },
         "isVirtual" : {
           "type" : "boolean"
         },
@@ -1378,9 +1381,6 @@
           "type" : "boolean"
         },
         "isCreditCard" : {
-          "type" : "boolean"
-        },
-        "isScratchCard" : {
           "type" : "boolean"
         },
         "label" : {
@@ -1640,6 +1640,9 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "origId" : {
+          "type" : "string"
+        },
         "origLab" : {
           "type" : "string"
         },
@@ -1662,9 +1665,6 @@
           "type" : "string"
         },
         "catCliDetLab" : {
-          "type" : "string"
-        },
-        "origId" : {
           "type" : "string"
         }
       }
@@ -1693,9 +1693,6 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "impaye" : {
-          "type" : "string"
-        },
         "indEngagement" : {
           "type" : "string"
         },
@@ -1703,6 +1700,9 @@
           "type" : "string"
         },
         "initiativeCanal" : {
+          "type" : "string"
+        },
+        "impaye" : {
           "type" : "string"
         },
         "label" : {

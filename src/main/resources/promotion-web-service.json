@@ -354,13 +354,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
-        "contractId" : {
-          "type" : "integer",
-          "format" : "int32"
-        },
         "personId" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "contractId" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "promotions" : {
           "type" : "array",
@@ -386,13 +386,13 @@
       "description" : "",
       "extends" : "",
       "properties" : {
+        "advantageType" : {
+          "type" : "string"
+        },
         "startDate" : {
           "type" : "string"
         },
         "endDate" : {
-          "type" : "string"
-        },
-        "advantageType" : {
           "type" : "string"
         }
       }
@@ -477,10 +477,10 @@
         "promotionId" : {
           "type" : "string"
         },
-        "enddate" : {
+        "shortLabel" : {
           "type" : "string"
         },
-        "shortLabel" : {
+        "enddate" : {
           "type" : "string"
         },
         "description" : {
@@ -540,11 +540,11 @@
         "internalPromotionId" : {
           "type" : "string"
         },
-        "maxCancelationDateAllowed" : {
-          "type" : "string"
-        },
         "remainsAdvantages" : {
           "type" : "boolean"
+        },
+        "maxCancelationDateAllowed" : {
+          "type" : "string"
         },
         "removable" : {
           "type" : "boolean"
@@ -561,10 +561,10 @@
         "promotionId" : {
           "type" : "string"
         },
-        "enddate" : {
+        "shortLabel" : {
           "type" : "string"
         },
-        "shortLabel" : {
+        "enddate" : {
           "type" : "string"
         },
         "description" : {
@@ -609,13 +609,13 @@
           "type" : "string",
           "description" : "message d'erreur de la validation du coupon"
         },
-        "infosSubscription" : {
-          "$ref" : "InfosSubscriptionContextAndArticles",
-          "description" : "informations de souscriptions dans le cas d'un coupon b2b"
-        },
         "businessToBusiness" : {
           "type" : "boolean",
           "description" : "indicateur qui permet de savoir s'il s'agit d'un coupon b2b"
+        },
+        "infosSubscription" : {
+          "$ref" : "InfosSubscriptionContextAndArticles",
+          "description" : "informations de souscriptions dans le cas d'un coupon b2b"
         },
         "description" : {
           "type" : "string",
